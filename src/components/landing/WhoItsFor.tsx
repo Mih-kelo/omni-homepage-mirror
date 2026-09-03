@@ -1,9 +1,9 @@
 const tags = [
-  "Fashion & lifestyle",
   "Shopify-native",
-  "$5k–$100k/mo revenue",
-  "DTC operators",
-  "Brand-led teams",
+  "DTC founders & operators",
+  "Performance marketers",
+  "Product & drop launches",
+  "Bootstrap to scaling",
 ];
 
 export function WhoItsFor() {
@@ -21,9 +21,9 @@ export function WhoItsFor() {
             letterSpacing: "-0.015em",
           }}
         >
-          Built for a specific kind
+          Built for modern Shopify brands
           <br />
-          of <span className="text-[var(--primary)]">brand operator.</span>
+          and <span className="text-[var(--primary)]">growth teams.</span>
         </h2>
 
         <div className="mt-12 flex flex-wrap items-center justify-center gap-x-3 gap-y-3">
@@ -37,9 +37,10 @@ export function WhoItsFor() {
           ))}
         </div>
 
-        <p className="mx-auto mt-14 max-w-[620px] text-[14px] leading-[1.6] text-black/50">
-          Not for you if you sell B2B, run on a non-Shopify stack, or want a tool that pushes a Buy
-          Now button on its own.
+        <p className="mx-auto mt-14 max-w-[620px] text-[15px] leading-[1.6] text-black/60">
+          For founders and media buyers who are tired of guessing what will convert on Meta.
+          Whether you launch ads in-house or collaborate with an agency partner, Omni Target turns
+          raw store data into an agency-grade ad blueprint before you commit budget.
         </p>
       </div>
     </section>

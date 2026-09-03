@@ -89,8 +89,8 @@ export function ColdTrafficParadox() {
         </div>
 
         <p className="mt-12 max-w-[780px] font-serif text-[20px] italic leading-relaxed text-[var(--gold-light)]">
-          The product that converts your existing audience is rarely the one that earns you a new
-          one.
+          The product your existing fans buy is rarely the one that earns you a new customer. Omni Target
+          finds the exact gateway item strangers buy on first click.
         </p>
       </div>
     </section>

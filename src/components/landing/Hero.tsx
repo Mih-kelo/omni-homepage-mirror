@@ -40,10 +40,10 @@ export function Hero() {
             <span className="text-[var(--primary-mid)]">Merchants.</span>
           </h1>
 
-          <p className="mt-7 max-w-[480px] text-[18px] leading-[1.55] text-white/[0.48]">
-            Shopify knows what sells. Meta knows who buys. They don't talk pre-spend. Omni Target
-            bridges that gap — run a free 60-second AI store & ad readiness audit, and turn real
-            store data into a ready-to-launch Meta Ads brief.
+          <p className="mt-7 max-w-[500px] text-[18px] leading-[1.55] text-white/[0.60]">
+            Pre-spend intelligence means knowing what converts before you spend $1 on Meta. Omni Target
+            turns your real Shopify sales data into an agency-grade Meta Ads brief in 3 minutes — complete with
+            your winning gateway product, 3 custom video hooks, and a calibrated testing budget.
           </p>
 
           <div className="mt-10 flex flex-wrap items-center gap-5">

@@ -1,8 +1,8 @@
 const steps = [
   {
     n: "01",
-    t: "Connect Shopify",
-    d: "One-click OAuth. Read-only access to orders, products, customers, and collections.",
+    t: "Connect Shopify in 30 seconds",
+    d: "Safe 1-click install with read-only access. We never modify your catalog or touch your customer data.",
   },
   {
     n: "02",
@@ -11,8 +11,8 @@ const steps = [
   },
   {
     n: "03",
-    t: "Get your complete Meta brief",
-    d: "Gateway product, audience profile, creative format prescription, behavior-derived hooks, correct optimization event, and dynamic budget — exported as a branded PDF.",
+    t: "Get your launch-ready Meta brief",
+    d: "Winning gateway product, audience targeting, 3 scroll-stopping video hooks, exact Meta campaign settings, and dynamic daily testing budget — exported as a branded PDF.",
   },
 ];
 
@@ -31,7 +31,7 @@ export function HowItWorks() {
           >
             From store to brief
             <br />
-            <span className="text-[var(--primary)]">in three steps.</span>
+            <span className="text-[var(--primary)]">in three simple steps.</span>
           </h2>
           <span className="hidden font-mono text-[11px] uppercase tracking-[0.2em] text-black/40 md:block">
             How it works

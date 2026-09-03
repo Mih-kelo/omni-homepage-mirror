@@ -28,7 +28,7 @@ export const COPY = {
   hero: {
     titleA: "Pre-Spend Intelligence for Shopify",
     titleB: "Merchants.",
-    body: "Shopify knows what sells. Meta knows who buys. They don't talk pre-spend. Omni Target bridges that gap — run a free 60-second AI store & ad readiness audit, and turn real store data into a ready-to-launch Meta Ads brief.",
+    body: "Pre-spend intelligence means knowing what converts before you spend $1 on Meta. Omni Target turns your real Shopify sales data into an agency-grade Meta Ads brief in 3 minutes — complete with your winning gateway product, 3 custom video hooks, and a calibrated testing budget.",
     ctaPrimary: "Open Omni Target",
     ctaSecondary: "See how it works →",
     ctaNote: "Includes 1 free ad brief & 60s AI store audit · No credit card required",
@@ -38,12 +38,12 @@ export const COPY = {
   howItWorks: {
     eyebrow: "How it works",
     titleA: "From store to brief",
-    titleB: "in three steps.",
+    titleB: "in three simple steps.",
     steps: [
       {
         n: "01",
-        t: "Connect Shopify",
-        d: "One-click OAuth. Read-only access to orders, products, customers, and collections.",
+        t: "Connect Shopify in 30 seconds",
+        d: "Safe 1-click install with read-only access. We never modify your catalog or touch your customer data.",
       },
       {
         n: "02",
@@ -52,8 +52,8 @@ export const COPY = {
       },
       {
         n: "03",
-        t: "Get your complete Meta brief",
-        d: "Gateway product, audience profile, creative format prescription, behavior-derived hooks, correct optimization event, and dynamic budget — exported as a branded PDF.",
+        t: "Get your launch-ready Meta brief",
+        d: "Winning gateway product, audience targeting, 3 scroll-stopping video hooks, exact Meta campaign settings, and dynamic daily testing budget — exported as a branded PDF.",
       },
     ],
   },
@@ -83,7 +83,7 @@ export const COPY = {
       verdict: "Acquisition engine.",
     },
     closing:
-      "The product that converts your existing audience is rarely the one that earns you a new one.",
+      "The product your existing fans buy is rarely the one that earns you a new customer. Omni Target finds the exact gateway item strangers buy on first click.",
   },
 
   /* the Range chamber's supporting copy — added in the July 2026 polish
@@ -107,13 +107,13 @@ export const COPY = {
     eyebrow: "What you get",
     titleA: "A complete brief.",
     titleB: "Nothing missing.",
-    body: "Everything a media buyer needs on day one — derived from your store, not from a template.",
+    body: "Everything a founder or media buyer needs to launch profitably on day one — derived from your store data, not templates.",
     items: [
-      "Audiences that match your actual buyer profile",
-      "Creative angles ranked by likelihood to convert",
-      "Gateway product identified from your real store data",
-      "Behavior-derived hooks — no reviews needed",
-      "Budget split calibrated to your store's order volume",
+      "Gateway product identified from real first-time buyer data",
+      "3 scroll-stopping video hooks tailored to your actual buyers",
+      "Creative format blueprint ranked by likelihood to convert",
+      "Exact Meta campaign settings (objective & optimization event)",
+      "Daily testing budget calibrated to your store's volume",
     ],
   },
 
@@ -132,17 +132,17 @@ export const COPY = {
 
   whoItsFor: {
     eyebrow: "Who it's for",
-    titleA: "Built for a specific kind",
-    titleB: "of brand operator.",
+    titleA: "Built for modern Shopify brands",
+    titleB: "and growth teams.",
     tags: [
-      "Fashion & lifestyle",
       "Shopify-native",
-      "$5k–$100k/mo revenue",
-      "DTC operators",
-      "Brand-led teams",
+      "DTC founders & operators",
+      "Performance marketers",
+      "Product & drop launches",
+      "Bootstrap to scaling",
     ],
     disclaimer:
-      "Not for you if you sell B2B, run on a non-Shopify stack, or want a tool that pushes a Buy Now button on its own.",
+      "For founders and media buyers who are tired of guessing what will convert on Meta. Whether you launch ads in-house or collaborate with an agency partner, Omni Target turns raw store data into an agency-grade ad blueprint before you commit budget.",
   },
 
   pricing: {

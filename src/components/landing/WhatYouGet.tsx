@@ -1,9 +1,9 @@
 const items = [
-  "Audiences that match your actual buyer profile",
-  "Creative angles ranked by likelihood to convert",
-  "Gateway product identified from your real store data",
-  "Behavior-derived hooks — no reviews needed",
-  "Budget split calibrated to your store's order volume",
+  "Gateway product identified from real first-time buyer data",
+  "3 scroll-stopping video hooks tailored to your actual buyers",
+  "Creative format blueprint ranked by likelihood to convert",
+  "Exact Meta campaign settings (objective & optimization event)",
+  "Daily testing budget calibrated to your store's volume",
 ];
 
 export function WhatYouGet() {
@@ -27,9 +27,9 @@ export function WhatYouGet() {
             <br />
             <span className="text-[var(--primary-mid)]">Nothing missing.</span>
           </h2>
-          <p className="mt-6 max-w-[380px] text-[16px] leading-[1.6] text-white/[0.48]">
-            Everything a media buyer needs on day one — derived from your store, not from a
-            template.
+          <p className="mt-6 max-w-[420px] text-[16px] leading-[1.6] text-white/[0.60]">
+            Everything a founder or media buyer needs to launch profitably on day one — derived from
+            your store data, not templates.
           </p>
         </div>
 
