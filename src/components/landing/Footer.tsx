@@ -18,7 +18,7 @@ export function Footer() {
           </Link>
         </nav>
         <p className="font-mono text-[11px] uppercase tracking-[0.16em] text-white/40 md:text-right">
-          Built for fashion brands who are serious about Meta.
+          Built for Shopify merchants who are serious about Meta.
         </p>
       </div>
     </footer>

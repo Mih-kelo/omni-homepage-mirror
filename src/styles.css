@@ -796,6 +796,15 @@ body:has(.lumen) { background-color: #fafaf8; }
   background: var(--lx-hairline);
   margin-top: 18px;
 }
+.lx-plate-features-heading {
+  display: block;
+  font-family: var(--lx-grotesk);
+  font-weight: 600;
+  font-size: 13px;
+  color: var(--lx-ink);
+  margin-top: 16px;
+  margin-bottom: 2px;
+}
 .lx-plate-features { list-style: none; margin: 6px 0 0; padding: 0; }
 .lx-plate-features li {
   display: flex;
@@ -809,13 +818,12 @@ body:has(.lumen) { background-color: #fafaf8; }
 }
 .lx-plate-features li:last-child { border-bottom: none; }
 .lx-plate-features li::before {
-  content: "";
-  width: 5px;
-  height: 5px;
-  border-radius: 50%;
-  background: var(--lx-accent);
+  content: "✓";
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--lx-accent);
   flex-shrink: 0;
-  transform: translateY(-1px);
+  transform: none;
 }
 .lx-plate-cta { margin-top: auto; padding-top: 20px; }
 .lx-plate-cta a {

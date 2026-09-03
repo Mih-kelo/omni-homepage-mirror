@@ -1,51 +1,56 @@
 const plans = [
   {
-    name: "Free",
-    price: "$0",
+    name: "Free Plan",
+    price: "Free",
     period: "",
-    desc: "1 campaign credit on install, no card required",
-    features: [],
+    desc: "",
+    features: [
+      "1 free ad brief on install",
+      "Find your top-converting product",
+      "3 ready-to-use ad angles & hooks",
+      "Step-by-step Meta setup guide",
+    ],
     cta: "Start Free",
     featured: false,
   },
   {
     name: "Starter Pack",
-    price: "$39",
-    period: "one-time",
-    desc: "Perfect for testing your first collection and identifying initial winners.",
+    price: "$9",
+    period: "one-time charge",
+    desc: "",
     features: [
-      "5 Campaign Briefs",
-      "Store Intelligence Insights",
-      "Creative Angle Blueprints",
-      "Valid for 12 months",
+      "3 ad briefs ($3.00 each)",
+      "Test your top 3 products",
+      "3 custom video hooks per item",
+      "Credits valid for 12 months",
     ],
     cta: "Get Starter",
     featured: false,
   },
   {
     name: "Growth Pack",
-    price: "$99",
-    period: "one-time",
-    desc: "For growing brands scaling multiple styles and running weekly tests.",
+    price: "$25",
+    period: "one-time charge",
+    desc: "",
     features: [
-      "15 Campaign Briefs",
+      "10 ad briefs ($2.50 each)",
+      "Perfect for new collection drops",
+      "Save 17% vs Starter Pack",
       "Everything in Starter Pack",
-      "Ideal for testing 3+ products",
-      "Save 15% per brief ($6.60 / brief)",
     ],
     cta: "Get Growth Pack",
     featured: true,
   },
   {
     name: "Scale Pack",
-    price: "$179",
-    period: "one-time",
-    desc: "High volume for massive collection drops and rapid creative testing.",
+    price: "$59",
+    period: "one-time charge",
+    desc: "",
     features: [
-      "30 Campaign Briefs",
+      "30 ad briefs ($1.97 each)",
+      "Cover your entire store catalog",
+      "Best value (save 34%)",
       "Everything in Growth Pack",
-      "Ideal for full catalog coverage",
-      "Best Value ($5.96 / brief)",
     ],
     cta: "Get Scale Pack",
     featured: false,
@@ -101,28 +106,33 @@ export function Pricing() {
                 </span>
                 <span className="font-mono text-[12px] text-white/40">{p.period}</span>
               </div>
-              <p className="mt-6 text-[14px] leading-[1.6] text-white/55">{p.desc}</p>
+              {p.desc ? (
+                <p className="mt-6 text-[14px] leading-[1.6] text-white/55">{p.desc}</p>
+              ) : null}
               {p.features && p.features.length > 0 && (
-                <ul className="mt-6 space-y-3">
-                  {p.features.map((feature, i) => (
-                    <li key={i} className="flex items-start gap-3 text-[14px] text-white/70">
-                      <svg
-                        className="mt-0.5 shrink-0 text-primary"
-                        width="16"
-                        height="16"
-                        viewBox="0 0 24 24"
-                        fill="none"
-                        stroke="currentColor"
-                        strokeWidth="2"
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                      >
-                        <polyline points="20 6 9 17 4 12"></polyline>
-                      </svg>
-                      <span>{feature}</span>
-                    </li>
-                  ))}
-                </ul>
+                <div className="mt-6">
+                  <h4 className="text-[14px] font-semibold text-white">Features</h4>
+                  <ul className="mt-3 space-y-3">
+                    {p.features.map((feature, i) => (
+                      <li key={i} className="flex items-start gap-3 text-[14px] text-white/70">
+                        <svg
+                          className="mt-0.5 shrink-0 text-primary"
+                          width="16"
+                          height="16"
+                          viewBox="0 0 24 24"
+                          fill="none"
+                          stroke="currentColor"
+                          strokeWidth="2"
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                        >
+                          <polyline points="20 6 9 17 4 12"></polyline>
+                        </svg>
+                        <span>{feature}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
               )}
               <a
                 href="https://app.omnitarget.co/"
@@ -155,10 +165,7 @@ export function Pricing() {
               <line x1="12" y1="16" x2="12" y2="12" />
               <line x1="12" y1="8" x2="12.01" y2="8" />
             </svg>
-            <span>
-              All charges are billed safely in USD via the official Shopify Billing API. Credits are
-              subject to a 12-month dormancy policy.
-            </span>
+            <span>All charges are billed in USD.</span>
           </div>
         </div>
       </div>

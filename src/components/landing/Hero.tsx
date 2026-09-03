@@ -37,7 +37,7 @@ export function Hero() {
           >
             Pre-Spend Intelligence for Shopify
             <br />
-            <span className="text-[var(--primary-mid)]">Fashion Brands.</span>
+            <span className="text-[var(--primary-mid)]">Merchants.</span>
           </h1>
 
           <p className="mt-7 max-w-[480px] text-[18px] leading-[1.55] text-white/[0.48]">

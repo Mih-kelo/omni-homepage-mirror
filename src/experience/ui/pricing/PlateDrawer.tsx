@@ -32,8 +32,9 @@ export function PlateDrawer() {
               <span className="lx-plate-price">{p.price}</span>
               {p.period && <span className="lx-plate-period">{p.period}</span>}
             </div>
-            <p className="lx-plate-desc">{p.desc}</p>
+            {p.desc ? <p className="lx-plate-desc">{p.desc}</p> : null}
             <span className="lx-plate-rule" aria-hidden="true" />
+            <span className="lx-plate-features-heading">Features</span>
             {p.features.length > 0 && (
               <ul className="lx-plate-features">
                 {p.features.map((f) => (

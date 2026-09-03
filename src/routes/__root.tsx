@@ -72,21 +72,21 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Omni Target | Pre-Spend Intelligence for Shopify Fashion Brands" },
+      { title: "Omni Target | Pre-Spend Intelligence for Shopify Merchants" },
       {
         name: "description",
         content:
-          "Shopify knows what sells. Meta knows who buys. They don't talk pre-spend. Omni Target bridges that gap — turning real store data into a ready-to-launch Meta Ads brief in three minutes.",
+          "Pre-Spend Intelligence for Shopify Merchants. Shopify knows what sells. Meta knows who buys. They don't talk pre-spend. Omni Target bridges that gap — turning real store data into a ready-to-launch Meta Ads brief in three minutes.",
       },
       { name: "author", content: "Omni Target" },
       {
         property: "og:title",
-        content: "Omni Target | Pre-Spend Intelligence for Shopify Fashion Brands",
+        content: "Omni Target | Pre-Spend Intelligence for Shopify Merchants",
       },
       {
         property: "og:description",
         content:
-          "Shopify knows what sells. Meta knows who buys. They don't talk pre-spend. Omni Target bridges that gap — turning real store data into a ready-to-launch Meta Ads brief in three minutes.",
+          "Pre-Spend Intelligence for Shopify Merchants. Shopify knows what sells. Meta knows who buys. They don't talk pre-spend. Omni Target bridges that gap — turning real store data into a ready-to-launch Meta Ads brief in three minutes.",
       },
       { property: "og:type", content: "website" },
       {
@@ -97,12 +97,12 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { name: "twitter:card", content: "summary_large_image" },
       {
         name: "twitter:title",
-        content: "Omni Target | Pre-Spend Intelligence for Shopify Fashion Brands",
+        content: "Omni Target | Pre-Spend Intelligence for Shopify Merchants",
       },
       {
         name: "twitter:description",
         content:
-          "Shopify knows what sells. Meta knows who buys. They don't talk pre-spend. Omni Target bridges that gap — turning real store data into a ready-to-launch Meta Ads brief in three minutes.",
+          "Pre-Spend Intelligence for Shopify Merchants. Shopify knows what sells. Meta knows who buys. They don't talk pre-spend. Omni Target bridges that gap — turning real store data into a ready-to-launch Meta Ads brief in three minutes.",
       },
       {
         name: "twitter:image",
