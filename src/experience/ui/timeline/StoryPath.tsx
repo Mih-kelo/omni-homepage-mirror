@@ -38,7 +38,7 @@ const WEAVE: Record<string, { x: number; y: number }> = {
 };
 
 const MOBILE_WEAVE: Record<string, { x: number; y: number }> = {
-  threshold: { x: 0.80, y: 0.65 }, // weaves to the right around the hero brief card
+  threshold: { x: 0.74, y: 0.58 }, // weaves to the right around the hero brief card
   listening: { x: 0.22, y: 0.65 }, // snakes across to the left
   paradox: { x: 0.78, y: 0.52 }, // snakes across to the right
   core: { x: 0.25, y: 0.50 }, // snakes across to the left
@@ -144,8 +144,8 @@ export function StoryPath() {
         lastHeight = r.height;
       }
       const start: Pt = {
-        x: mobile ? 0.85 * w : anchors[0].x,
-        y: mobile ? anchors[0].y * 0.55 : Math.min(window.innerHeight * 0.14, anchors[0].y * 0.35),
+        x: mobile ? 0.74 * w : anchors[0].x,
+        y: Math.min(window.innerHeight * 0.14, anchors[0].y * 0.35),
       };
       const end: Pt = {
         x: 0.5 * w,
