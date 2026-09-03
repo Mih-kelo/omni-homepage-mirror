@@ -72,7 +72,6 @@ export function StoryPath() {
     const stroke = strokeRef.current;
     const tip = tipRef.current;
     if (!svg || !stroke || !tip) return;
-    if (typeof window !== "undefined" && window.matchMedia("(max-width: 900px)").matches) return;
 
     let total = 0;
     let nodeLens: number[] = [];
@@ -120,25 +119,29 @@ export function StoryPath() {
       svg.setAttribute("height", String(h));
       svg.setAttribute("viewBox", `0 0 ${w} ${h}`);
 
-      // anchors from the real sections; mobile narrows the weave so the
-      // stroke never fights single-column content
+      // anchors from the real sections; mobile positions along the left gutter
+      // so it never collides with text
       const mobile = window.matchMedia("(max-width: 900px)").matches;
       const anchors: Pt[] = [];
       let lastHeight = 0;
-      for (const c of CHAMBERS) {
+      for (let i = 0; i < CHAMBERS.length; i++) {
+        const c = CHAMBERS[i];
         const el = document.getElementById(`chamber-${c.id}`);
         if (!el) return; // DOM not ready — keep previous geometry
         const r = el.getBoundingClientRect();
         const wv = WEAVE[c.id];
-        const xf = mobile ? 0.5 + (wv.x - 0.5) * 0.55 : wv.x;
-        anchors.push({ x: xf * w, y: r.top - trackRect.top + r.height * wv.y });
+        const x = mobile ? 12 + (i % 2 === 0 ? 0 : 5) : wv.x * w;
+        anchors.push({ x, y: r.top - trackRect.top + r.height * wv.y });
         lastHeight = r.height;
       }
       const start: Pt = {
         x: anchors[0].x,
-        y: Math.min(window.innerHeight * 0.14, anchors[0].y * 0.35),
+        y: mobile ? anchors[0].y * 0.4 : Math.min(window.innerHeight * 0.14, anchors[0].y * 0.35),
       };
-      const end: Pt = { x: 0.5 * w, y: h - lastHeight * 0.12 };
+      const end: Pt = {
+        x: mobile ? anchors[anchors.length - 1].x : 0.5 * w,
+        y: h - lastHeight * 0.12,
+      };
       const { move, segs } = catmullRom([start, ...anchors, end]);
 
       stroke.setAttribute("d", move + " " + segs.join(" "));

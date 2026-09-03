@@ -598,10 +598,17 @@ body:has(.lumen) { background-color: #fafaf8; }
   padding: 6px 14px;
   font-family: var(--lx-mono);
   font-size: 10.5px;
-  letter-spacing: 0.18em;
+  letter-spacing: 0.16em;
   text-transform: uppercase;
   color: var(--lx-accent);
   background: color-mix(in srgb, var(--lx-accent) 7%, transparent);
+}
+@media (max-width: 640px) {
+  .lx-badge {
+    font-size: 9.5px;
+    letter-spacing: 0.08em;
+    padding: 5px 12px;
+  }
 }
 
 .lx-cta-major {
@@ -928,20 +935,20 @@ body:has(.lumen) { background-color: #fafaf8; }
      even breathing room — no forced viewport-tall gaps between beats */
   .lumen-stage {
     min-height: 0 !important;
-    padding-inline: clamp(16px, 5vw, 24px);
-    padding-block: 36px 32px;
+    padding-inline: clamp(20px, 5.5vw, 32px);
+    padding-block: 56px 48px;
   }
   /* the fixed bar floats above the page — the hero begins beneath it,
      with clear air under the pill */
   #chamber-threshold .lumen-stage {
     min-height: 0 !important;
-    padding-top: calc(env(safe-area-inset-top, 0px) + 84px);
-    padding-bottom: 24px;
+    padding-top: calc(env(safe-area-inset-top, 0px) + 96px);
+    padding-bottom: 36px;
   }
   #chamber-listening .lumen-stage {
     min-height: 0 !important;
-    padding-top: 24px;
-    padding-bottom: 32px;
+    padding-top: 48px;
+    padding-bottom: 48px;
   }
   .lx-wall { font-size: clamp(30px, 9vw, 44px); }
   .lx-bignum { font-size: clamp(48px, 16vw, 80px); }

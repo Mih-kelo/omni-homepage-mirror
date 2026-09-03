@@ -3,7 +3,7 @@ import type { CSSProperties } from "react";
 export function HeroBriefPreview({ style, className = "" }: { style?: CSSProperties; className?: string }) {
   return (
     <div
-      className={`w-full max-w-[540px] rounded-2xl border border-white/15 bg-[#0d0d16]/90 p-5 md:p-6 shadow-2xl backdrop-blur-xl text-left ${className}`}
+      className={`w-full max-w-[540px] rounded-2xl border border-white/15 bg-[#0d0d16]/90 p-4 sm:p-6 shadow-2xl backdrop-blur-xl text-left ${className}`}
       style={{
         boxShadow: "0 24px 60px -12px rgba(99, 102, 241, 0.18), 0 0 1px 1px rgba(255, 255, 255, 0.1)",
         ...style,

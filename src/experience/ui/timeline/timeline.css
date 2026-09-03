@@ -64,7 +64,11 @@
 
 @media (max-width: 900px) {
   .lx-storypath {
-    display: none !important;
+    display: block;
+    opacity: 0.75;
+  }
+  .lx-storypath-stroke {
+    stroke-width: 1.5px;
   }
 }
 

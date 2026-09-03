@@ -54,12 +54,12 @@ export function Threshold() {
           </Reveal>
         </div>
         {/* right column — live Meta brief preview mockup */}
-        <div style={{ display: "flex", justifyContent: "center", width: "100%" }}>
+        <div className="mt-8 lg:mt-0" style={{ display: "flex", justifyContent: "center", width: "100%" }}>
           <HeroBriefPreview />
         </div>
       </div>
       {/* Ecosystem Logo Strip matching user reference image */}
-      <LogoBar className="mt-8 md:mt-16" />
+      <LogoBar className="mt-12 md:mt-20 mb-4" />
     </ChamberSection>
   );
 }

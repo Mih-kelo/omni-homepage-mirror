@@ -129,10 +129,10 @@ export function JourneyScroll({
         const dt = Math.min(0.05, Math.max(0.001, (now - lastT) / 1000));
         lastT = now;
         const tier = useTier.getState();
-        if (!tier.webglOk) {
-          const j = useJourney.getState();
+        const j = useJourney.getState();
+        if (!tier.webglOk || !j.worldReady) {
           if (!j.worldReady) j.setWorldReady(true);
-          smoothed = damp(smoothed, j.rawProgress, 8.5, dt);
+          smoothed = damp(smoothed, j.rawProgress, 9, dt);
           j.setSmoothed(smoothed);
         }
         smoothRaf = requestAnimationFrame(stepSmooth);
