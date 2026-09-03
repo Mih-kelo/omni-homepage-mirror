@@ -63,8 +63,8 @@
 }
 
 @media (max-width: 900px) {
-  .lx-storypath-stroke {
-    stroke-width: 1.5px;
+  .lx-storypath {
+    display: none !important;
   }
 }
 

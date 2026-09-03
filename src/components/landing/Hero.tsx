@@ -1,6 +1,6 @@
 import { BriefTerminal } from "./BriefTerminal";
 import { ShopifyIcon } from "./ShopifyIcon";
-import { TrustBar } from "./TrustBar";
+import { LogoBar } from "./LogoBar";
 
 export function Hero() {
   return (
@@ -61,27 +61,26 @@ export function Hero() {
             </a>
           </div>
 
-          <div className="mt-4 flex flex-wrap items-center gap-2 font-mono text-[11px] tracking-wide text-white/50">
-            <ShopifyIcon size={15} style={{ color: "#95BF47" }} />
-            <span>Official Shopify Partner · 30s Read-Only Setup · No credit card required</span>
-            <span className="text-white/20">·</span>
+          <div className="mt-4 flex flex-wrap items-center gap-2 text-[12.5px] font-medium text-white/70">
+            <ShopifyIcon size={16} style={{ color: "#95BF47" }} />
+            <span>Official Shopify App · 1 Free Brief on Install</span>
+            <span className="text-white/25">·</span>
             <a
               href="https://apps.shopify.com/omni-target"
               target="_blank"
               rel="noopener noreferrer"
               className="text-[var(--primary-light)] underline hover:text-white"
             >
-              Install via App Store ↗
+              Install from App Store ↗
             </a>
           </div>
-
-          <TrustBar className="mt-8 max-w-[560px]" />
         </div>
 
         <div className="flex justify-center lg:justify-end">
           <BriefTerminal />
         </div>
       </div>
+      <LogoBar className="mt-12 px-6 max-w-[1280px] mx-auto" />
     </section>
   );
 }

@@ -11,10 +11,12 @@ import { TIMING } from "../../config/motion";
 export function PresenceTracker() {
   useEffect(() => {
     const p = usePresence.getState();
+    const isTouch = window.matchMedia("(pointer: coarse)").matches;
     p.setFlags({
-      isTouch: window.matchMedia("(pointer: coarse)").matches,
+      isTouch,
       reducedMotion: window.matchMedia("(prefers-reduced-motion: reduce)").matches,
     });
+    if (isTouch) return;
 
     let lastX = -9999;
     let lastY = -9999;

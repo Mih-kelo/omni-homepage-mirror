@@ -140,16 +140,25 @@
 /* small screens: the bar loosens instead of cramming — wordmark and
    trigger shrink, gaps tighten, the action keeps a ≥44px tap target */
 @media (max-width: 640px) {
-  .lx-topbar-root { top: max(10px, env(safe-area-inset-top)); }
-  .lx-topbar { gap: 10px; padding: 6px 6px 6px 13px; }
-  .lx-topbar-word { font-size: 10.5px; letter-spacing: 0.13em; gap: 8px; }
-  .lx-topbar-word .lx-brandmark { width: 20px; height: 20px; }
-  .lx-topbar-actions { gap: 8px; }
-  .lx-topbar-trigger { font-size: 10px; padding: 8px 4px; }
+  .lx-topbar-root {
+    top: max(10px, env(safe-area-inset-top));
+    width: min(92vw, 420px);
+  }
+  .lx-topbar {
+    gap: 12px;
+    padding: 6px 6px 6px 14px;
+    justify-content: space-between;
+  }
+  .lx-topbar-word { font-size: 11px; letter-spacing: 0.12em; gap: 8px; }
+  .lx-topbar-word .lx-brandmark { width: 18px; height: 18px; }
+  .lx-topbar-actions { gap: 6px; }
+  .lx-topbar-trigger { display: none !important; }
   .lx-topbar .lx-cta {
     display: inline-flex;
     align-items: center;
-    min-height: 44px;
+    padding: 7px 14px !important;
+    font-size: 11px !important;
+    min-height: 36px !important;
   }
   .lx-topbar-index { left: 0; right: 0; width: auto; }
 }

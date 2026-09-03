@@ -143,7 +143,8 @@ export function TopBar() {
             <span className="lx-topbar-caret" aria-hidden="true" />
           </button>
           <a className="lx-cta" href={APP_URL}>
-            {COPY.hero.ctaPrimary}
+            <span className="hidden sm:inline">{COPY.hero.ctaPrimary}</span>
+            <span className="sm:hidden">Start Audit</span>
           </a>
         </div>
       </nav>

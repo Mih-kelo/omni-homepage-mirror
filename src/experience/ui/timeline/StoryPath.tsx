@@ -72,6 +72,7 @@ export function StoryPath() {
     const stroke = strokeRef.current;
     const tip = tipRef.current;
     if (!svg || !stroke || !tip) return;
+    if (typeof window !== "undefined" && window.matchMedia("(max-width: 900px)").matches) return;
 
     let total = 0;
     let nodeLens: number[] = [];
