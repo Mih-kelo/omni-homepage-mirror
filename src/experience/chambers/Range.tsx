@@ -34,6 +34,38 @@ export function Range() {
           <Reveal delay={0.24}>
             <p className="lx-lede">{COPY.range.context}</p>
           </Reveal>
+          <Reveal delay={0.34}>
+            <div
+              style={{
+                marginTop: 6,
+                padding: "12px 16px",
+                borderRadius: 12,
+                border: "1px solid rgba(120, 119, 198, 0.2)",
+                background: "rgba(120, 119, 198, 0.05)",
+                display: "grid",
+                gap: 5,
+              }}
+            >
+              <div style={{ display: "flex", alignItems: "center", gap: 7 }}>
+                <span style={{ fontSize: 13 }}>🤝</span>
+                <span
+                  className="lx-mono"
+                  style={{
+                    fontSize: 10,
+                    fontWeight: 700,
+                    letterSpacing: "0.15em",
+                    textTransform: "uppercase",
+                    color: "var(--lx-accent)",
+                  }}
+                >
+                  Built for Founders · Trusted by Agencies
+                </span>
+              </div>
+              <p style={{ fontSize: 12, lineHeight: 1.45, opacity: 0.75, margin: 0 }}>
+                Top performance agencies use Omni Target to audit new Shopify clients in 60 seconds and deliver launch-ready Meta briefs without wasting 20 hours in spreadsheets.
+              </p>
+            </div>
+          </Reveal>
         </div>
         <div className="lx-metrics">
           <Reveal delay={0.1}>

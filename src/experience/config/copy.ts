@@ -63,24 +63,24 @@ export const COPY = {
     titleA: "Your bestseller is not",
     titleB: "your gateway product.",
     bestseller: {
-      label: "Organic bestseller",
-      name: "Product A",
+      label: "Organic Bestseller (Retention Piece)",
+      name: "Tailored French Terry Trousers",
       rows: [
         ["First-time buyers", "12%"],
-        ["Average order value", "$640"],
-        ["Cold-traffic ROAS", "0.6x"],
+        ["Average order value", "$165"],
+        ["Cold-traffic ROAS", "0.6x (Unprofitable)"],
       ] as const,
-      verdict: "Retention piece",
+      verdict: "Loved by existing fans. Flopped on cold ads because strangers won't risk buying fitted pants on first click.",
     },
     gateway: {
-      label: "Gateway product",
-      name: "Product B",
+      label: "Gateway Product (Acquisition Engine)",
+      name: "The Essential Relaxed Slip Dress",
       rows: [
         ["First-time buyers", "64%"],
-        ["Average order value", "$110"],
-        ["Cold-traffic ROAS", "2.4x"],
+        ["Average order value", "$78"],
+        ["Cold-traffic ROAS", "2.4x (Profitable Day 1)"],
       ] as const,
-      verdict: "Acquisition engine.",
+      verdict: "Converts cold strangers on first click. 42% of buyers return within 60 days to purchase the tailored trousers.",
     },
     closing:
       "The product your existing fans buy is rarely the one that earns you a new customer. Omni Target finds the exact gateway item strangers buy on first click.",
@@ -92,7 +92,7 @@ export const COPY = {
   range: {
     eyebrow: "Proof before spend",
     context:
-      "A pilot store's gateway product, sent at cold traffic and measured against the store's own baseline — the read you get before committing budget.",
+      "Average performance benchmark when cold Meta traffic is directed to an algorithmic gateway product rather than guessing on an organic bestseller.",
     roas: {
       label: "Cold-traffic ROAS",
       note: "Every $1 of cold-traffic spend returned $2.40 — from audiences who had never met the brand.",

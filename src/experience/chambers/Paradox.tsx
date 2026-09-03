@@ -6,20 +6,46 @@ import { COPY, type ParadoxCard } from "../config/copy";
 function ProductCard({ data, gold, delay }: { data: ParadoxCard; gold?: boolean; delay: number }) {
   return (
     <Reveal delay={delay}>
-      <article className="lx-card">
-        <span className="lx-mono" style={gold ? { color: "var(--lx-gold)" } : undefined}>
-          {data.label}
-        </span>
-        <h3 className="lx-card-title">{data.name}</h3>
+      <article
+        className="lx-card"
+        style={{
+          border: gold ? "1px solid rgba(234, 179, 8, 0.25)" : "1px solid rgba(99, 102, 241, 0.25)",
+          boxShadow: gold
+            ? "0 10px 30px -10px rgba(234, 179, 8, 0.08)"
+            : "0 10px 30px -10px rgba(99, 102, 241, 0.12)",
+        }}
+      >
+        <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", marginBottom: 6 }}>
+          <span
+            className="lx-mono"
+            style={{
+              fontSize: 10.5,
+              fontWeight: 700,
+              letterSpacing: "0.15em",
+              textTransform: "uppercase",
+              color: gold ? "#f59e0b" : "#6366f1",
+            }}
+          >
+            {gold ? "🔴 " : "🟢 "} {data.label}
+          </span>
+        </div>
+        <h3 className="lx-card-title" style={{ fontSize: 20, margin: "6px 0 16px" }}>
+          {data.name}
+        </h3>
         <dl style={{ margin: 0 }}>
           {data.rows.map(([k, v]) => (
             <div className="lx-row" key={k}>
               <dt>{k}</dt>
-              <dd>{v}</dd>
+              <dd style={{ fontWeight: 600, color: k.includes("ROAS") ? (gold ? "#ef4444" : "#10b981") : undefined }}>
+                {v}
+              </dd>
             </div>
           ))}
         </dl>
-        <div className={gold ? "lx-verdict gold" : "lx-verdict"}>
+        <div
+          className={gold ? "lx-verdict gold" : "lx-verdict"}
+          style={{ marginTop: 18, lineHeight: 1.45, fontSize: 13 }}
+        >
           <i aria-hidden="true" />
           <span>{data.verdict}</span>
         </div>
