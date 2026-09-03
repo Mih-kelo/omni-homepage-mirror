@@ -6,8 +6,8 @@ const steps = [
   },
   {
     n: "02",
-    t: "Intelligence engine reads your store",
-    d: "Identifies gateway products dynamically, calculates first-time buyer ratios, maps repeat purchase patterns — all relative to your store's own baseline.",
+    t: "AI Store Audit & Intelligence Engine",
+    d: "Runs an instant 60-second store audit with your Ad Readiness Score (0–100), identifies gateway products, calculates first-time buyer ratios, and maps repeat purchase patterns.",
   },
   {
     n: "03",

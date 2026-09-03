@@ -135,7 +135,7 @@ export function Pricing() {
                 </div>
               )}
               <a
-                href="https://app.omnitarget.co/"
+                href="https://app.omnitarget.co/login"
                 className={`mt-10 inline-flex items-center justify-center rounded-lg px-5 py-3 text-[15px] font-medium transition-colors ${
                   p.featured
                     ? "bg-primary text-white hover:bg-[#7c33ee]"

@@ -6,7 +6,8 @@
  * chambers stage this copy cinematically. No new narrative copy is invented.
  */
 
-export const APP_URL = "https://app.omnitarget.co/";
+export const APP_URL = "https://app.omnitarget.co/login";
+export const SHOPIFY_APP_URL = "https://apps.shopify.com/omni-target";
 
 export interface ParadoxCard {
   label: string;
@@ -22,14 +23,16 @@ export interface BriefRow {
 }
 
 export const COPY = {
-  badge: "Shopify store intelligence",
+  badge: "Shopify store intelligence · Free 60s AI Audit",
 
   hero: {
     titleA: "Pre-Spend Intelligence for Shopify",
     titleB: "Merchants.",
-    body: "Shopify knows what sells. Meta knows who buys. They don't talk pre-spend. Omni Target bridges that gap — turning real store data into a ready-to-launch Meta Ads brief in three minutes.",
+    body: "Shopify knows what sells. Meta knows who buys. They don't talk pre-spend. Omni Target bridges that gap — run a free 60-second AI store & ad readiness audit, and turn real store data into a ready-to-launch Meta Ads brief.",
     ctaPrimary: "Open Omni Target",
     ctaSecondary: "See how it works →",
+    ctaNote: "Includes 1 free ad brief & 60s AI store audit · No credit card required",
+    shopifyBadge: "Install on Shopify App Store",
   },
 
   howItWorks: {
@@ -44,8 +47,8 @@ export const COPY = {
       },
       {
         n: "02",
-        t: "Intelligence engine reads your store",
-        d: "Identifies gateway products dynamically, calculates first-time buyer ratios, maps repeat purchase patterns — all relative to your store's own baseline.",
+        t: "AI Store Audit & Intelligence Engine",
+        d: "Runs an instant 60-second store audit with your Ad Readiness Score (0–100), identifies gateway products, calculates first-time buyer ratios, and maps repeat purchase patterns.",
       },
       {
         n: "03",
@@ -119,9 +122,9 @@ export const COPY = {
     rows: [
       { k: "store", v: "Pilot Brand (NDA)" },
       { k: "gateway", v: "Product B", highlight: true },
-      { k: "format", v: "UGC carousel, 4 frames" },
+      { k: "format", v: "Manual Sales (AI Guided)" },
       { k: "hook 01", v: '"The one piece that quietly outsells everything."' },
-      { k: "optimize", v: "Purchases · 7d click" },
+      { k: "optimize", v: "Add to Cart · 7d click" },
       { k: "budget", v: "$42 / day · scale at ROAS 1.8" },
     ] as ReadonlyArray<BriefRow>,
     generated: "generated in 4.2s",
@@ -213,5 +216,6 @@ export const COPY = {
     tagline: "Built for Shopify merchants who are serious about Meta.",
     privacy: "Privacy",
     terms: "Terms",
+    shopifyApp: "Shopify App Store",
   },
 } as const;

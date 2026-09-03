@@ -53,7 +53,10 @@ export const useTier = create<TierState>((set, get) => ({
   webglOk: null,
   probe: () => {
     const ok = webglAvailable();
-    set({ webglOk: ok, profile: TIER_PROFILES[detectTier()] });
+    const isMobile =
+      typeof window !== "undefined" &&
+      (window.innerWidth < 768 || window.matchMedia("(pointer: coarse)").matches);
+    set({ webglOk: ok && !isMobile, profile: TIER_PROFILES[detectTier()] });
   },
   demote: () => {
     const t = get().profile.tier;

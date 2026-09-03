@@ -24,7 +24,7 @@ export function Hero() {
               color: "var(--primary-light)",
             }}
           >
-            Shopify store intelligence
+            Shopify store intelligence · Free 60s AI Audit
           </span>
 
           <h1
@@ -42,12 +42,12 @@ export function Hero() {
 
           <p className="mt-7 max-w-[480px] text-[18px] leading-[1.55] text-white/[0.48]">
             Shopify knows what sells. Meta knows who buys. They don't talk pre-spend. Omni Target
-            bridges that gap — turning real store data into a ready-to-launch Meta Ads brief in
-            three minutes.
+            bridges that gap — run a free 60-second AI store & ad readiness audit, and turn real
+            store data into a ready-to-launch Meta Ads brief.
           </p>
 
-          <div className="mt-10 flex flex-wrap items-center gap-7">
-            <a href="https://app.omnitarget.co/" className="cta-premium group">
+          <div className="mt-10 flex flex-wrap items-center gap-5">
+            <a href="https://app.omnitarget.co/login" className="cta-premium group">
               <span className="cta-premium-inner">
                 <span className="cta-premium-label">Open Omni Target</span>
                 <span aria-hidden className="cta-premium-arrow">
@@ -63,10 +63,24 @@ export function Hero() {
                 </span>
               </span>
             </a>
-            <a href="#how" className="text-[15px] text-white/60 transition-colors hover:text-white">
+            <a
+              href="https://apps.shopify.com/omni-target"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 rounded-lg border border-white/15 px-4 py-3 text-[14px] font-medium text-white/80 transition-colors hover:border-white/30 hover:text-white"
+            >
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" className="text-[#95BF47]">
+                <path d="M15.337 2.06c-.027-.14-.144-.242-.286-.248-.144-.008-.258.077-.311.206l-2.025 4.887a1.002 1.002 0 01-.424.475l-4.593 2.652c-.122.07-.183.21-.148.345.034.135.15.228.289.228h1.272l1.674 8.797c.026.136.144.236.282.236h3.407c.138 0 .256-.1.282-.236l1.674-8.797h1.365c.139 0 .255-.093.289-.228.035-.135-.026-.275-.148-.345l-4.593-2.652a1.002 1.002 0 01-.424-.475l-2.026-4.887zM4.148 10.378l2.008 10.551a1.5 1.5 0 001.472 1.221h8.744a1.5 1.5 0 001.472-1.221l2.008-10.551H4.148z"/>
+              </svg>
+              <span>Install on Shopify</span>
+            </a>
+            <a href="#how" className="text-[14px] text-white/60 transition-colors hover:text-white">
               See how it works →
             </a>
           </div>
+          <p className="mt-4 font-mono text-[11px] tracking-wide text-white/40">
+            Includes 1 free ad brief & 60s AI store audit · No credit card required
+          </p>
         </div>
 
         <div className="flex justify-center lg:justify-end">

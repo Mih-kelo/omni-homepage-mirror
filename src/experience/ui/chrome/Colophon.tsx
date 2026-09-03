@@ -1,5 +1,5 @@
 import { Link } from "@tanstack/react-router";
-import { COPY } from "../../config/copy";
+import { COPY, SHOPIFY_APP_URL } from "../../config/copy";
 import { BrandMark } from "./BrandMark";
 
 /**
@@ -16,6 +16,15 @@ export function Colophon() {
           <span className="lx-colophon-word">OMNI TARGET</span>
         </span>
         <nav style={{ display: "flex", gap: 18 }} aria-label="Legal">
+          <a
+            href={SHOPIFY_APP_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="lx-mono"
+            style={{ color: "inherit", textDecoration: "none" }}
+          >
+            {COPY.footer.shopifyApp}
+          </a>
           <Link to="/privacy" className="lx-mono">
             {COPY.footer.privacy}
           </Link>

@@ -1,9 +1,9 @@
 const rows = [
   { k: "store", v: "Pilot Brand (NDA)" },
   { k: "gateway", v: "Product B", highlight: true },
-  { k: "format", v: "UGC carousel, 4 frames" },
+  { k: "format", v: "Manual Sales (AI Guided)" },
   { k: "hook_1", v: '"The one piece that quietly outsells everything."' },
-  { k: "optimize", v: "Purchases · 7d click" },
+  { k: "optimize", v: "Add to Cart · 7d click" },
   { k: "budget", v: "$42 / day · scale at ROAS 1.8" },
 ];
 

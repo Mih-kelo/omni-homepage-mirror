@@ -9,6 +9,15 @@ export function Footer() {
           wordmarkClassName="font-serif text-lg font-bold tracking-tight text-white"
         />
         <nav className="flex items-center gap-6 text-[14px] text-white/55">
+          <a
+            href="https://apps.shopify.com/omni-target"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="hover:text-white"
+          >
+            Shopify App Store
+          </a>
+          <span className="text-white/20">·</span>
           <Link to="/privacy" className="hover:text-white">
             Privacy
           </Link>
