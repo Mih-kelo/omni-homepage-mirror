@@ -33,7 +33,7 @@ const WEAVE: Record<string, { x: number; y: number }> = {
   composition: { x: 0.74, y: 0.55 }, // under the right column's margin
   range: { x: 0.25, y: 0.5 }, // the open middle between verdict and numbers
   observatory: { x: 0.74, y: 0.5 }, // content centered — open right
-  invitation: { x: 0.5, y: 0.55 }, // ends at the CTA
+  invitation: { x: 0.5, y: 0.78 }, // ends at the CTA button
 };
 
 const MOBILE_WEAVE: Record<string, { x: number; y: number }> = {
@@ -43,7 +43,7 @@ const MOBILE_WEAVE: Record<string, { x: number; y: number }> = {
   composition: { x: 0.16, y: 0.55 }, // snakes across to the left
   range: { x: 0.84, y: 0.50 }, // snakes across to the right
   observatory: { x: 0.18, y: 0.50 }, // snakes across to the left
-  invitation: { x: 0.50, y: 0.80 }, // snakes down directly into the center CTA button
+  invitation: { x: 0.50, y: 0.78 }, // snakes down directly into the center CTA button
 };
 
 /** at rest, only the very beginning of the stroke exists (px of path) */
@@ -146,23 +146,21 @@ export function StoryPath() {
         anchors.push({ x: wv.x * w, y: r.top - trackRect.top + r.height * wv.y });
         lastHeight = r.height;
       }
-      const ctaBtn = document.querySelector<HTMLElement>("#chamber-invitation [data-lens-cta]");
+      const ctaBtn = document.querySelector<HTMLElement>(
+        "#chamber-invitation a.lx-cta-major, #chamber-invitation [data-lens-cta]",
+      );
       if (ctaBtn) {
         const ctaRect = ctaBtn.getBoundingClientRect();
         anchors[anchors.length - 1] = {
           x: ctaRect.left - trackRect.left + ctaRect.width * 0.5,
-          y: ctaRect.top - trackRect.top + 2,
+          y: ctaRect.top - trackRect.top,
         };
       }
       const start: Pt = {
         x: mobile ? 0.90 * w : anchors[0].x,
         y: mobile ? 30 : anchors[0].y * 0.35,
       };
-      const end: Pt = {
-        x: anchors[anchors.length - 1].x,
-        y: anchors[anchors.length - 1].y,
-      };
-      const { move, segs } = catmullRom([start, ...anchors, end]);
+      const { move, segs } = catmullRom([start, ...anchors]);
 
       stroke.setAttribute("d", move + " " + segs.join(" "));
       total = stroke.getTotalLength();
