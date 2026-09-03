@@ -26,9 +26,7 @@ export function Range() {
           <Reveal delay={0.12}>
             <div className="lx-verdict">
               <i aria-hidden="true" />
-              <span>
-                {gateway.label} · {gateway.verdict}
-              </span>
+              <span>Gateway Product · Acquisition Engine</span>
             </div>
           </Reveal>
           <Reveal delay={0.24}>

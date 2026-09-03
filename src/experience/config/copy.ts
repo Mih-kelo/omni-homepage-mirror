@@ -63,24 +63,24 @@ export const COPY = {
     titleA: "Your bestseller is not",
     titleB: "your gateway product.",
     bestseller: {
-      label: "Organic Bestseller (Retention Piece)",
+      label: "Organic bestseller",
       name: "Tailored French Terry Trousers",
       rows: [
         ["First-time buyers", "12%"],
         ["Average order value", "$165"],
-        ["Cold-traffic ROAS", "0.6x (Unprofitable)"],
+        ["Cold-traffic ROAS", "0.6x"],
       ] as const,
-      verdict: "Loved by existing fans. Flopped on cold ads because strangers won't risk buying fitted pants on first click.",
+      verdict: "Retention piece · High sizing hesitation",
     },
     gateway: {
-      label: "Gateway Product (Acquisition Engine)",
+      label: "Gateway product",
       name: "The Essential Relaxed Slip Dress",
       rows: [
         ["First-time buyers", "64%"],
         ["Average order value", "$78"],
-        ["Cold-traffic ROAS", "2.4x (Profitable Day 1)"],
+        ["Cold-traffic ROAS", "2.4x"],
       ] as const,
-      verdict: "Converts cold strangers on first click. 42% of buyers return within 60 days to purchase the tailored trousers.",
+      verdict: "Acquisition engine · Instant impulse buy",
     },
     closing:
       "The product your existing fans buy is rarely the one that earns you a new customer. Omni Target finds the exact gateway item strangers buy on first click.",
