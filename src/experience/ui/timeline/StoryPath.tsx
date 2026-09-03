@@ -37,6 +37,17 @@ const WEAVE: Record<string, { x: number; y: number }> = {
   invitation: { x: 0.5, y: 0.55 }, // ends at the CTA
 };
 
+const MOBILE_WEAVE: Record<string, { x: number; y: number }> = {
+  threshold: { x: 0.80, y: 0.65 }, // weaves to the right around the hero brief card
+  listening: { x: 0.22, y: 0.65 }, // snakes across to the left
+  paradox: { x: 0.78, y: 0.52 }, // snakes across to the right
+  core: { x: 0.25, y: 0.50 }, // snakes across to the left
+  composition: { x: 0.75, y: 0.55 }, // snakes across to the right
+  range: { x: 0.24, y: 0.50 }, // snakes across to the left
+  observatory: { x: 0.76, y: 0.50 }, // snakes across to the right
+  invitation: { x: 0.50, y: 0.55 }, // snakes into center CTA
+};
+
 /** at rest, only the very beginning of the stroke exists (px of path) */
 const MIN_TICK = 48;
 /** skip repaints below this progress delta (≈ a few px of stroke) */
@@ -119,8 +130,7 @@ export function StoryPath() {
       svg.setAttribute("height", String(h));
       svg.setAttribute("viewBox", `0 0 ${w} ${h}`);
 
-      // anchors from the real sections; mobile positions along the left gutter
-      // so it never collides with text
+      // anchors from the real sections; snakes gracefully on both desktop and mobile
       const mobile = window.matchMedia("(max-width: 900px)").matches;
       const anchors: Pt[] = [];
       let lastHeight = 0;
@@ -129,17 +139,16 @@ export function StoryPath() {
         const el = document.getElementById(`chamber-${c.id}`);
         if (!el) return; // DOM not ready — keep previous geometry
         const r = el.getBoundingClientRect();
-        const wv = WEAVE[c.id];
-        const x = mobile ? 12 + (i % 2 === 0 ? 0 : 5) : wv.x * w;
-        anchors.push({ x, y: r.top - trackRect.top + r.height * wv.y });
+        const wv = mobile ? MOBILE_WEAVE[c.id] : WEAVE[c.id];
+        anchors.push({ x: wv.x * w, y: r.top - trackRect.top + r.height * wv.y });
         lastHeight = r.height;
       }
       const start: Pt = {
-        x: anchors[0].x,
-        y: mobile ? anchors[0].y * 0.4 : Math.min(window.innerHeight * 0.14, anchors[0].y * 0.35),
+        x: mobile ? 0.85 * w : anchors[0].x,
+        y: mobile ? anchors[0].y * 0.55 : Math.min(window.innerHeight * 0.14, anchors[0].y * 0.35),
       };
       const end: Pt = {
-        x: mobile ? anchors[anchors.length - 1].x : 0.5 * w,
+        x: 0.5 * w,
         y: h - lastHeight * 0.12,
       };
       const { move, segs } = catmullRom([start, ...anchors, end]);

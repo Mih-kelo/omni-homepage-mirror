@@ -65,10 +65,10 @@
 @media (max-width: 900px) {
   .lx-storypath {
     display: block;
-    opacity: 0.75;
+    opacity: 0.85;
   }
   .lx-storypath-stroke {
-    stroke-width: 1.5px;
+    stroke-width: 2px;
   }
 }
 
