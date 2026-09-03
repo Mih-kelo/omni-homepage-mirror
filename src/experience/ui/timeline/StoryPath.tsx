@@ -28,23 +28,21 @@ interface Pt {
  *  open whitespace, eyeballed from the alternating split layouts */
 const WEAVE: Record<string, { x: number; y: number }> = {
   threshold: { x: 0.74, y: 0.58 }, // hero copy left — the light lives right
-  listening: { x: 0.2, y: 0.66 }, // headline upper-left, open lower-left
   paradox: { x: 0.5, y: 0.55 }, // between the two products, through "vs"
-  core: { x: 0.5, y: 0.5 }, // straight through the darkness
-  composition: { x: 0.16, y: 0.55 }, // under the left column's margin
-  range: { x: 0.62, y: 0.5 }, // the open middle between verdict and numbers
-  observatory: { x: 0.22, y: 0.5 }, // content centered — open left
+  listening: { x: 0.2, y: 0.66 }, // headline upper-left, open lower-left
+  composition: { x: 0.74, y: 0.55 }, // under the right column's margin
+  range: { x: 0.25, y: 0.5 }, // the open middle between verdict and numbers
+  observatory: { x: 0.74, y: 0.5 }, // content centered — open right
   invitation: { x: 0.5, y: 0.55 }, // ends at the CTA
 };
 
 const MOBILE_WEAVE: Record<string, { x: number; y: number }> = {
   threshold: { x: 0.74, y: 0.58 }, // weaves to the right around the hero brief card
-  listening: { x: 0.22, y: 0.65 }, // snakes across to the left
-  paradox: { x: 0.78, y: 0.52 }, // snakes across to the right
-  core: { x: 0.25, y: 0.50 }, // snakes across to the left
-  composition: { x: 0.75, y: 0.55 }, // snakes across to the right
-  range: { x: 0.24, y: 0.50 }, // snakes across to the left
-  observatory: { x: 0.76, y: 0.50 }, // snakes across to the right
+  paradox: { x: 0.24, y: 0.52 }, // snakes across to the left
+  listening: { x: 0.76, y: 0.60 }, // snakes across to the right
+  composition: { x: 0.24, y: 0.55 }, // snakes across to the left
+  range: { x: 0.76, y: 0.50 }, // snakes across to the right
+  observatory: { x: 0.24, y: 0.50 }, // snakes across to the left
   invitation: { x: 0.50, y: 0.55 }, // snakes into center CTA
 };
 

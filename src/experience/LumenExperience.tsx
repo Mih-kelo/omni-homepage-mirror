@@ -10,9 +10,8 @@ import { Colophon } from "./ui/chrome/Colophon";
 import { DebugHud } from "./ui/chrome/DebugHud";
 import { TopBar } from "./ui/nav/TopBar";
 import { Threshold } from "./chambers/Threshold";
-import { Listening } from "./chambers/Listening";
 import { Paradox } from "./chambers/Paradox";
-import { CoreChamber } from "./chambers/CoreChamber";
+import { Listening } from "./chambers/Listening";
 import { Composition } from "./chambers/Composition";
 import { Range } from "./chambers/Range";
 import { Observatory } from "./chambers/Observatory";
@@ -102,9 +101,8 @@ export function LumenExperience() {
       </ClientOnly>
       <main className="lumen-track" ref={trackRef}>
         <Threshold />
-        <Listening />
         <Paradox />
-        <CoreChamber />
+        <Listening />
         <Composition />
         <Range />
         <Observatory />

@@ -10,7 +10,6 @@ import { COPY } from "../config/copy";
  * the artifact on the right. Text always wins (no rings behind it).
  */
 export function Composition() {
-  const step = COPY.howItWorks.steps[2];
   return (
     <ChamberSection id="composition" justify="stretch">
       <div className="lx-bleed lx-split lx-split-top">
@@ -40,22 +39,7 @@ export function Composition() {
           </Reveal>
         </div>
 
-        <div style={{ display: "grid", gap: 26, alignContent: "center", height: "100%" }}>
-          <Reveal delay={0.15}>
-            <div style={{ display: "grid", gridTemplateColumns: "64px 1fr", gap: 18 }}>
-              <span className="lx-numeral" style={{ fontSize: 48, color: "var(--lx-accent)" }}>
-                {step.n}
-              </span>
-              <div>
-                <h3 style={{ font: "600 18px/1.3 var(--lx-grotesk)", margin: "0 0 8px" }}>
-                  {step.t}
-                </h3>
-                <p className="lx-lede" style={{ fontSize: 15 }}>
-                  {step.d}
-                </p>
-              </div>
-            </div>
-          </Reveal>
+        <div style={{ display: "grid", gap: 20, alignContent: "center", height: "100%" }}>
           <Reveal delay={0.2}>
             <div className="lx-card">
               <span className="lx-mono">{COPY.brief.window}</span>

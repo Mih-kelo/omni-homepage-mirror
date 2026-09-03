@@ -13,12 +13,11 @@ import "./nav.css";
  * Visible from mount (unlike the panel, it does not wait for presence).
  */
 
-/** the eight chambers, labelled with verbatim COPY eyebrows where they exist */
+/** the chambers, labelled with verbatim COPY eyebrows where they exist */
 const SECTIONS: ReadonlyArray<{ id: string; label: string }> = [
   { id: "threshold", label: "Overview" },
-  { id: "listening", label: COPY.howItWorks.eyebrow },
   { id: "paradox", label: COPY.paradox.eyebrow },
-  { id: "core", label: "The Core" },
+  { id: "listening", label: COPY.howItWorks.eyebrow },
   { id: "composition", label: COPY.whatYouGet.eyebrow },
   { id: "range", label: COPY.range.eyebrow },
   { id: "observatory", label: COPY.whoItsFor.eyebrow },
