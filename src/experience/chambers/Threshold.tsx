@@ -50,16 +50,27 @@ export function Threshold() {
                   Install from App Store ↗
                 </a>
               </div>
+              {/* Mobile-only ecosystem trust strip directly under CTA stack */}
+              <div className="block lg:hidden pt-5">
+                <LogoBar className="py-2" />
+              </div>
             </div>
           </Reveal>
         </div>
         {/* right column — live Meta brief preview mockup */}
-        <div className="mt-8 lg:mt-0" style={{ display: "flex", justifyContent: "center", width: "100%" }}>
+        <div className="mt-8 lg:mt-0 flex flex-col items-center w-full">
+          <div className="block lg:hidden mb-3 text-center">
+            <span className="font-mono text-[10.5px] uppercase tracking-[0.2em] text-black/40 dark:text-white/40">
+              Deliverable Preview · Ready in 3 Minutes
+            </span>
+          </div>
           <HeroBriefPreview />
         </div>
       </div>
-      {/* Ecosystem Logo Strip matching user reference image */}
-      <LogoBar className="mt-12 md:mt-20 mb-4" />
+      {/* Desktop ecosystem logo strip spanning bottom */}
+      <div className="hidden lg:block">
+        <LogoBar className="mt-14 mb-4" />
+      </div>
     </ChamberSection>
   );
 }
