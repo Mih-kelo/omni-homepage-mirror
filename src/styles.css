@@ -945,18 +945,28 @@ body:has(.lumen) { background-color: #fafaf8; }
     padding-top: calc(env(safe-area-inset-top, 0px) + 96px);
     padding-bottom: 36px;
   }
-  #chamber-listening .lumen-stage {
+  #chamber-listening .lumen-stage,
+  #chamber-composition .lumen-stage,
+  #chamber-range .lumen-stage {
     min-height: 0 !important;
-    padding-top: 48px;
-    padding-bottom: 48px;
+    padding-top: 56px;
+    padding-bottom: 56px;
   }
   .lx-wall { font-size: clamp(30px, 9vw, 44px); }
   .lx-bignum { font-size: clamp(48px, 16vw, 80px); }
   .lx-card { min-width: 0; width: 100%; }
   /* the range figures open up: left-aligned ledger rows, a hairline
      above each, clear air between number, label and caption */
-  .lx-metrics { justify-items: stretch; text-align: left; gap: 26px; }
-  .lx-metric { border-top: 1px solid var(--lx-hairline); padding-top: 20px; }
+  .lx-metrics {
+    justify-items: stretch;
+    text-align: left;
+    gap: 36px;
+    margin-top: 36px;
+  }
+  .lx-metric {
+    border-top: 1px solid var(--lx-hairline);
+    padding-top: 28px;
+  }
   .lx-metric .lx-mono { margin-top: 8px; }
   .lx-metric .lx-bignote { margin: 10px 0 0; max-width: 32ch; }
   /* brief.omnitarget: values hold the card's right edge even when the

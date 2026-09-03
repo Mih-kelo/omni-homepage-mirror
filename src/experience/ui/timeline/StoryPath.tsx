@@ -145,10 +145,26 @@ export function StoryPath() {
         x: mobile ? 0.74 * w : anchors[0].x,
         y: Math.min(window.innerHeight * 0.14, anchors[0].y * 0.35),
       };
-      const end: Pt = {
-        x: 0.5 * w,
-        y: h - lastHeight * 0.12,
-      };
+      const ctaBtn = document.querySelector<HTMLElement>("#chamber-invitation [data-lens-cta]");
+      let end: Pt;
+      if (ctaBtn) {
+        const ctaRect = ctaBtn.getBoundingClientRect();
+        end = {
+          x: ctaRect.left - trackRect.left + ctaRect.width * 0.5,
+          y: ctaRect.top - trackRect.top + 4,
+        };
+        if (mobile && anchors.length > 0) {
+          anchors[anchors.length - 1] = {
+            x: end.x,
+            y: ctaRect.top - trackRect.top - 36,
+          };
+        }
+      } else {
+        end = {
+          x: 0.5 * w,
+          y: h - lastHeight * 0.12,
+        };
+      }
       const { move, segs } = catmullRom([start, ...anchors, end]);
 
       stroke.setAttribute("d", move + " " + segs.join(" "));

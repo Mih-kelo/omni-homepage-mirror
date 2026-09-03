@@ -1,6 +1,7 @@
 import { ChamberSection } from "../ui/placards/ChamberSection";
 import { WallText } from "../ui/placards/WallText";
 import { Reveal } from "../ui/placards/Reveal";
+import { BrandMark } from "../ui/chrome/BrandMark";
 import { COPY } from "../config/copy";
 
 /**
@@ -46,9 +47,7 @@ export function Composition() {
               {/* Document Header */}
               <div className="flex items-start justify-between pb-3 border-b border-slate-100 dark:border-white/10">
                 <div className="flex items-center gap-2.5">
-                  <div className="h-7 w-7 rounded-lg bg-indigo-600 flex items-center justify-center text-white font-bold text-[13px] shadow-sm">
-                    Ω
-                  </div>
+                  <BrandMark size={28} className="rounded-lg shadow-sm" />
                   <span className="font-extrabold text-[17px] tracking-tight text-indigo-600 dark:text-indigo-400">
                     Omni Target
                   </span>
