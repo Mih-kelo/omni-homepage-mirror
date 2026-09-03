@@ -94,11 +94,16 @@ export function StoryPath() {
       if (!force && Math.abs(p - lastP) < EPS) return;
       lastP = p;
 
-      // the pen: drawn length follows progress; a small tick always exists
-      const len = Math.min(total, Math.max(MIN_TICK, p * total));
+      // the pen: drawn length follows progress; do not draw at top of page (p < 0.005)
+      const len = p < 0.005 ? 0 : Math.min(total, Math.max(MIN_TICK, p * total));
       stroke.style.strokeDashoffset = String(total - len);
-      const pt = stroke.getPointAtLength(len);
-      tip.setAttribute("transform", `translate(${pt.x.toFixed(1)} ${pt.y.toFixed(1)})`);
+      if (len > 0) {
+        tip.style.opacity = "0.85";
+        const pt = stroke.getPointAtLength(len);
+        tip.setAttribute("transform", `translate(${pt.x.toFixed(1)} ${pt.y.toFixed(1)})`);
+      } else {
+        tip.style.opacity = "0";
+      }
 
       // nodes ink in as the tip passes; the nearest one breathes
       for (let i = 0; i < CHAMBERS.length; i++) {
@@ -142,29 +147,13 @@ export function StoryPath() {
         lastHeight = r.height;
       }
       const start: Pt = {
-        x: mobile ? 0.74 * w : anchors[0].x,
-        y: Math.min(window.innerHeight * 0.14, anchors[0].y * 0.35),
+        x: anchors[0].x,
+        y: anchors[0].y * 0.4,
       };
-      const ctaBtn = document.querySelector<HTMLElement>("#chamber-invitation [data-lens-cta]");
-      let end: Pt;
-      if (ctaBtn) {
-        const ctaRect = ctaBtn.getBoundingClientRect();
-        end = {
-          x: ctaRect.left - trackRect.left + ctaRect.width * 0.5,
-          y: ctaRect.top - trackRect.top + 4,
-        };
-        if (mobile && anchors.length > 0) {
-          anchors[anchors.length - 1] = {
-            x: end.x,
-            y: ctaRect.top - trackRect.top - 36,
-          };
-        }
-      } else {
-        end = {
-          x: 0.5 * w,
-          y: h - lastHeight * 0.12,
-        };
-      }
+      const end: Pt = {
+        x: anchors[anchors.length - 1].x,
+        y: anchors[anchors.length - 1].y + 12,
+      };
       const { move, segs } = catmullRom([start, ...anchors, end]);
 
       stroke.setAttribute("d", move + " " + segs.join(" "));

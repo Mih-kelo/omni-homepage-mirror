@@ -35,19 +35,22 @@ export function Threshold() {
                   {COPY.hero.ctaSecondary}
                 </a>
               </div>
-              <div style={{ display: "flex", alignItems: "center", gap: 8, marginTop: 16, flexWrap: "wrap" }}>
-                <ShopifyIcon size={16} style={{ color: "#95BF47" }} />
-                <span style={{ fontSize: 12.5, color: "var(--lx-ink-soft)", fontWeight: 500 }}>
-                  Official Shopify App · 1 Free Brief on Install
-                </span>
-                <span style={{ opacity: 0.3 }}>·</span>
+              {/* High-Converting Trust Pill & App Store Action */}
+              <div className="mt-4 flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-2.5 sm:gap-3.5 text-xs">
+                <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-black/[0.03] dark:bg-white/[0.06] border border-black/[0.08] dark:border-white/10 text-slate-700 dark:text-slate-300 shadow-xs">
+                  <ShopifyIcon size={15} style={{ color: "#95BF47" }} className="shrink-0" />
+                  <span className="font-semibold text-slate-900 dark:text-white">Official Shopify App</span>
+                  <span className="opacity-30">·</span>
+                  <span className="text-emerald-600 dark:text-emerald-400 font-semibold">1 Free Brief on Install</span>
+                </div>
                 <a
                   href={SHOPIFY_APP_URL}
                   target="_blank"
                   rel="noopener noreferrer"
-                  style={{ fontSize: 12.5, color: "var(--lx-accent)", textDecoration: "underline" }}
+                  className="text-[12px] text-indigo-600 dark:text-indigo-400 hover:underline font-medium inline-flex items-center gap-1"
                 >
-                  Install from App Store ↗
+                  Install from App Store
+                  <span aria-hidden="true">↗</span>
                 </a>
               </div>
               {/* Mobile-only ecosystem trust strip directly under CTA stack */}
