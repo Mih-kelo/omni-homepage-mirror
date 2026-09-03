@@ -62,13 +62,7 @@
   }
 }
 
-@media (max-width: 768px) {
-  .lx-storypath {
-    display: none !important;
-  }
-}
-
-@media (min-width: 769px) and (max-width: 900px) {
+@media (max-width: 900px) {
   .lx-storypath {
     display: block;
     opacity: 0.85;

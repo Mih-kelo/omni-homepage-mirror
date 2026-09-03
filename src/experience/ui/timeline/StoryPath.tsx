@@ -37,13 +37,13 @@ const WEAVE: Record<string, { x: number; y: number }> = {
 };
 
 const MOBILE_WEAVE: Record<string, { x: number; y: number }> = {
-  threshold: { x: 0.74, y: 0.58 }, // weaves to the right around the hero brief card
-  paradox: { x: 0.24, y: 0.52 }, // snakes across to the left
-  listening: { x: 0.76, y: 0.60 }, // snakes across to the right
-  composition: { x: 0.24, y: 0.55 }, // snakes across to the left
-  range: { x: 0.76, y: 0.50 }, // snakes across to the right
-  observatory: { x: 0.24, y: 0.50 }, // snakes across to the left
-  invitation: { x: 0.50, y: 0.55 }, // snakes into center CTA
+  threshold: { x: 0.85, y: 0.65 }, // weaves down past the hero deliverable preview
+  paradox: { x: 0.16, y: 0.50 }, // snakes across to the left
+  listening: { x: 0.84, y: 0.55 }, // snakes across to the right
+  composition: { x: 0.16, y: 0.55 }, // snakes across to the left
+  range: { x: 0.84, y: 0.50 }, // snakes across to the right
+  observatory: { x: 0.18, y: 0.50 }, // snakes across to the left
+  invitation: { x: 0.50, y: 0.80 }, // snakes down directly into the center CTA button
 };
 
 /** at rest, only the very beginning of the stroke exists (px of path) */
@@ -146,13 +146,21 @@ export function StoryPath() {
         anchors.push({ x: wv.x * w, y: r.top - trackRect.top + r.height * wv.y });
         lastHeight = r.height;
       }
+      const ctaBtn = document.querySelector<HTMLElement>("#chamber-invitation [data-lens-cta]");
+      if (ctaBtn) {
+        const ctaRect = ctaBtn.getBoundingClientRect();
+        anchors[anchors.length - 1] = {
+          x: ctaRect.left - trackRect.left + ctaRect.width * 0.5,
+          y: ctaRect.top - trackRect.top + 2,
+        };
+      }
       const start: Pt = {
-        x: anchors[0].x,
-        y: anchors[0].y * 0.4,
+        x: mobile ? 0.90 * w : anchors[0].x,
+        y: mobile ? 30 : anchors[0].y * 0.35,
       };
       const end: Pt = {
         x: anchors[anchors.length - 1].x,
-        y: anchors[anchors.length - 1].y + 12,
+        y: anchors[anchors.length - 1].y,
       };
       const { move, segs } = catmullRom([start, ...anchors, end]);
 
