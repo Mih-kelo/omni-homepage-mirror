@@ -23,15 +23,15 @@ export interface BriefRow {
 }
 
 export const COPY = {
-  badge: "Shopify store intelligence · Free 60s AI Audit",
+  badge: "Pre-Spend Intelligence for Shopify · Free 60s AI Audit",
 
   hero: {
-    titleA: "Pre-Spend Intelligence for Shopify",
-    titleB: "Merchants.",
-    body: "Pre-spend intelligence means knowing what converts before you spend $1 on Meta. Omni Target turns your real Shopify sales data into an agency-grade Meta Ads brief in 3 minutes — complete with your winning gateway product, 3 custom video hooks, and a calibrated testing budget.",
-    ctaPrimary: "Open Omni Target",
+    titleA: "Know what converts before you",
+    titleB: "spend $1 on Meta.",
+    body: "Omni Target turns your real Shopify sales data into a launch-ready Meta Ads brief in 3 minutes — pinpointing your winning gateway product, 3 custom video hooks, exact campaign settings, and a calibrated testing budget.",
+    ctaPrimary: "Start Free Store Audit",
     ctaSecondary: "See how it works →",
-    ctaNote: "Includes 1 free ad brief & 60s AI store audit · No credit card required",
+    ctaNote: "Official Shopify Partner · 30s Read-Only Setup · No credit card required",
     shopifyBadge: "Install on Shopify App Store",
   },
 

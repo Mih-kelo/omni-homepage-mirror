@@ -317,7 +317,7 @@
 .lumen-stage > * { pointer-events: auto; }
 /* arrival keeps the full frame beyond phones; the pricing climax only
    earns it on true desktop — tablets flow straight through it */
-@media (min-width: 641px) {
+@media (min-width: 901px) {
   #chamber-threshold .lumen-stage {
     min-height: 100vh;
     min-height: 100svh;
@@ -427,6 +427,13 @@
 .lx-char[data-on] { opacity: 1; }
 @media (prefers-reduced-motion: reduce) {
   .lumen .lx-char { opacity: 1; transition: none; }
+}
+@media (max-width: 900px) {
+  .lumen .lx-char,
+  .lx-char {
+    opacity: 1 !important;
+    transition: none !important;
+  }
 }
 
 /* ---- paper placard ---- */
@@ -920,14 +927,21 @@ body:has(.lumen) { background-color: #fafaf8; }
   /* connected storytelling: sections sit at natural height with tight,
      even breathing room — no forced viewport-tall gaps between beats */
   .lumen-stage {
-    min-height: 0;
-    padding-inline: clamp(20px, 7vw, 48px);
-    padding-block: 56px 48px;
+    min-height: 0 !important;
+    padding-inline: clamp(16px, 5vw, 24px);
+    padding-block: 36px 32px;
   }
   /* the fixed bar floats above the page — the hero begins beneath it,
      with clear air under the pill */
   #chamber-threshold .lumen-stage {
-    padding-top: calc(env(safe-area-inset-top, 0px) + 104px);
+    min-height: 0 !important;
+    padding-top: calc(env(safe-area-inset-top, 0px) + 84px);
+    padding-bottom: 24px;
+  }
+  #chamber-listening .lumen-stage {
+    min-height: 0 !important;
+    padding-top: 24px;
+    padding-bottom: 32px;
   }
   .lx-wall { font-size: clamp(30px, 9vw, 44px); }
   .lx-bignum { font-size: clamp(48px, 16vw, 80px); }

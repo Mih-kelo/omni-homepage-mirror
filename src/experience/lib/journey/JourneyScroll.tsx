@@ -2,7 +2,8 @@ import { useLayoutEffect, useRef, type RefObject } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useJourney } from "./journeyStore";
-import { chamberAt, gradeAt, clamp01 } from "./math";
+import { chamberAt, gradeAt, clamp01, damp } from "./math";
+import { useTier } from "../tiers/tierStore";
 import { CHAMBERS } from "../../config/journey";
 import { PALETTE, mixHex } from "../../config/palette";
 
@@ -117,6 +118,26 @@ export function JourneyScroll({
         const j = useJourney.getState();
         j.addDwell(j.chamberIndex, 1000);
       }, 1000);
+
+      // When 3D WorldCanvas / CameraRig is bypassed (e.g. mobile/touch devices),
+      // damp rawProgress -> smoothedProgress here so StoryPath and writing scrub
+      // accurately as the visitor scrolls.
+      let smoothed = 0;
+      let smoothRaf = 0;
+      let lastT = performance.now();
+      const stepSmooth = (now: number) => {
+        const dt = Math.min(0.05, Math.max(0.001, (now - lastT) / 1000));
+        lastT = now;
+        const tier = useTier.getState();
+        if (!tier.webglOk) {
+          const j = useJourney.getState();
+          if (!j.worldReady) j.setWorldReady(true);
+          smoothed = damp(smoothed, j.rawProgress, 8.5, dt);
+          j.setSmoothed(smoothed);
+        }
+        smoothRaf = requestAnimationFrame(stepSmooth);
+      };
+      smoothRaf = requestAnimationFrame(stepSmooth);
 
       applyGrade(0);
       master.update();
