@@ -42,7 +42,7 @@ const MOBILE_WEAVE: Record<string, { x: number; y: number }> = {
   listening: { x: 0.84, y: 0.55 }, // snakes across to the right
   composition: { x: 0.16, y: 0.55 }, // snakes across to the left
   range: { x: 0.84, y: 0.50 }, // snakes across to the right
-  observatory: { x: 0.18, y: 0.50 }, // snakes across to the left
+  observatory: { x: 0.06, y: 0.50 }, // shifted left into margin to clear DTC pills and title
   invitation: { x: 0.50, y: 0.78 }, // snakes down directly into the center CTA button
 };
 
