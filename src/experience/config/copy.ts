@@ -138,7 +138,7 @@ export const COPY = {
       "DTC Store Owners",
       "Growth Teams & Agencies",
       "Stores with multiple products",
-      "Spending $1k–$50k/mo on Meta",
+      "Spending $300–$50k/mo on Meta",
       "Tired of guessing what converts",
     ],
     disclaimer:
