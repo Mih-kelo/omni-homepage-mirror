@@ -135,14 +135,14 @@ export const COPY = {
     titleA: "Built for modern Shopify brands",
     titleB: "and growth teams.",
     tags: [
-      "DTC Founders & Operators",
-      "Performance Agencies & Media Buyers",
-      "5+ SKU Shopify Catalogs",
-      "Pre-Spend Catalog Audits",
-      "Bootstrap to Scaling ($1k–$50k/mo)",
+      "DTC Store Owners",
+      "Growth Teams & Agencies",
+      "Stores with multiple products",
+      "Spending $1k–$50k/mo on Meta",
+      "Tired of guessing what converts",
     ],
     disclaimer:
-      "Built for DTC founders looking for their single high-converting gateway product, and performance agencies who need to audit new Shopify client catalogs in 60 seconds without wasting 20 hours in spreadsheets.",
+      "For store owners tired of burning budget on products that don't convert, and agency teams who want to deliver winning Meta briefs without 20 hours of spreadsheet digging.",
   },
 
   pricing: {
