@@ -135,14 +135,14 @@ export const COPY = {
     titleA: "Built for modern Shopify brands",
     titleB: "and growth teams.",
     tags: [
-      "Shopify-native",
-      "DTC founders & operators",
-      "Performance marketers",
-      "Product & drop launches",
-      "Bootstrap to scaling",
+      "DTC Founders & Operators",
+      "Performance Agencies & Media Buyers",
+      "5+ SKU Shopify Catalogs",
+      "Pre-Spend Catalog Audits",
+      "Bootstrap to Scaling ($1k–$50k/mo)",
     ],
     disclaimer:
-      "For founders and media buyers who are tired of guessing what will convert on Meta. Whether you launch ads in-house or collaborate with an agency partner, Omni Target turns raw store data into an agency-grade ad blueprint before you commit budget.",
+      "Built for DTC founders looking for their single high-converting gateway product, and performance agencies who need to audit new Shopify client catalogs in 60 seconds without wasting 20 hours in spreadsheets.",
   },
 
   pricing: {
