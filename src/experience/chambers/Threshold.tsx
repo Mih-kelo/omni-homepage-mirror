@@ -64,7 +64,7 @@ export function Threshold() {
         <div className="mt-8 lg:mt-0 flex flex-col items-center w-full">
           <div className="block lg:hidden mb-3 text-center">
             <span className="font-mono text-[10.5px] uppercase tracking-[0.2em] text-black/40 dark:text-white/40">
-              Deliverable Preview · Ready in 3 Minutes
+              Interactive Brief Audit · 3 Sample Niches
             </span>
           </div>
           <HeroBriefPreview />

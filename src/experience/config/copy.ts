@@ -28,7 +28,7 @@ export const COPY = {
   hero: {
     titleA: "Know what converts before you",
     titleB: "spend $1 on Meta.",
-    body: "Omni Target turns your real Shopify sales data into a launch-ready Meta Ads brief in 3 minutes — pinpointing your winning gateway product, 3 custom video hooks, exact campaign settings, and a calibrated testing budget.",
+    body: "Omni Target turns your real Shopify sales data into a launch-ready Meta Ads brief — running a 60-second store audit to pinpoint your winning gateway product, 3 custom video hooks, exact campaign settings, and a calibrated testing budget.",
     ctaPrimary: "Start Free Store Audit",
     ctaSecondary: "See how it works →",
     ctaNote: "Official Shopify Partner · 30s Read-Only Setup · No credit card required",
