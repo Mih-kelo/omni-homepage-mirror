@@ -20,35 +20,8 @@ const CURRENCIES: Record<CurrencyCode, CurrencyConfig> = {
 };
 
 function detectDefaultCurrency(): CurrencyCode {
-  try {
-    const tz = Intl.DateTimeFormat().resolvedOptions().timeZone || "";
-    const lang = (navigator.language || "").toLowerCase();
-
-    if (
-      tz.includes("Lagos") ||
-      lang.includes("-ng") ||
-      lang === "yo" ||
-      lang === "ig" ||
-      lang === "ha"
-    ) {
-      return "NGN";
-    }
-    if (tz.includes("London") || lang.includes("-gb")) {
-      return "GBP";
-    }
-    if (
-      tz.includes("Paris") ||
-      tz.includes("Berlin") ||
-      tz.includes("Madrid") ||
-      tz.includes("Rome") ||
-      tz.includes("Amsterdam") ||
-      tz.includes("Europe")
-    ) {
-      return "EUR";
-    }
-  } catch {
-    // fallback
-  }
+  // Default to USD globally to maintain 1:1 consistency with the official Shopify App Store listing.
+  // Visitors can freely toggle between USD, NGN, GBP, and EUR using the switcher.
   return "USD";
 }
 

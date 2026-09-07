@@ -4,7 +4,7 @@ import { WallText } from "../ui/placards/WallText";
 import { Reveal } from "../ui/placards/Reveal";
 import { BrandMark } from "../ui/chrome/BrandMark";
 import { APP_URL, COPY } from "../config/copy";
-import adCreativeTee from "@/assets/ad-creative-tee.png";
+import adCreativeTee from "@/assets/ad-creative-tee.jpg";
 
 /**
  * Chamber 4 — The Ad Plan.

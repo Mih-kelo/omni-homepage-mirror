@@ -1019,7 +1019,12 @@ body:has(.lumen) { background-color: #fafaf8; }
   color: var(--lx-ink-soft);
 }
 .lx-plate[data-featured="true"] .lx-plate-name { color: var(--lx-accent); }
-.lx-plate-pricerow { display: flex; align-items: baseline; gap: 8px; }
+.lx-plate-pricerow {
+  display: flex;
+  align-items: baseline;
+  flex-wrap: wrap;
+  gap: 2px 8px;
+}
 .lx-plate-price {
   font-family: var(--lx-serif);
   font-weight: 600;
