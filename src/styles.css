@@ -359,10 +359,11 @@
   gap: clamp(32px, 6vw, 110px);
   align-items: center;
 }
+.lx-split > * { min-width: 0; max-width: 100%; }
 .lx-split-top { align-items: start; }
 @media (max-width: 900px) {
   /* stacked: phones keep a tight 32px seam, tablets breathe a little */
-  .lx-split { grid-template-columns: 1fr; gap: clamp(32px, 5vw, 44px); }
+  .lx-split { grid-template-columns: minmax(0, 1fr); gap: clamp(32px, 5vw, 44px); }
 }
 
 /* the story path (the drawn brush stroke) styles itself:
