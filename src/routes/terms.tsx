@@ -105,8 +105,8 @@ function TermsPage() {
             <h2 className="text-2xl font-semibold text-[var(--lx-ink)]">13. Contact Information</h2>
             <p>
               Questions about the Terms of Service should be sent to us at{" "}
-              <a href="mailto:support@omnitarget.co" className="underline hover:text-[var(--lx-accent)]">
-                support@omnitarget.co
+              <a href="mailto:hello@omnitarget.co" className="underline hover:text-[var(--lx-accent)]">
+                hello@omnitarget.co
               </a>
               .
             </p>

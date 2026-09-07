@@ -19,7 +19,6 @@ const SECTIONS: ReadonlyArray<{ id: string; label: string }> = [
   { id: "paradox", label: COPY.paradox.eyebrow },
   { id: "listening", label: COPY.howItWorks.eyebrow },
   { id: "composition", label: COPY.whatYouGet.eyebrow },
-  { id: "range", label: COPY.range.eyebrow },
   { id: "observatory", label: COPY.whoItsFor.eyebrow },
   { id: "invitation", label: COPY.pricing.eyebrow },
 ];

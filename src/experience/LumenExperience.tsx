@@ -13,7 +13,6 @@ import { Threshold } from "./chambers/Threshold";
 import { Paradox } from "./chambers/Paradox";
 import { Listening } from "./chambers/Listening";
 import { Composition } from "./chambers/Composition";
-import { Range } from "./chambers/Range";
 import { Observatory } from "./chambers/Observatory";
 import { Invitation } from "./chambers/Invitation";
 
@@ -104,7 +103,6 @@ export function LumenExperience() {
         <Paradox />
         <Listening />
         <Composition />
-        <Range />
         <Observatory />
         <Invitation />
       </main>

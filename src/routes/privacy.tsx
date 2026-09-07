@@ -119,8 +119,8 @@ function PrivacyPage() {
             <h2 className="text-2xl font-semibold text-[var(--lx-ink)]">8. Your Rights</h2>
             <p>
               Depending on your jurisdiction, you (or your customers, via you as data controller) may have rights to access, correct, or request deletion of data processed by the App. Requests can be made via Shopify&apos;s data request mechanisms or by contacting us directly at{" "}
-              <a href="mailto:support@omnitarget.co" className="underline hover:text-[var(--lx-accent)]">
-                support@omnitarget.co
+              <a href="mailto:hello@omnitarget.co" className="underline hover:text-[var(--lx-accent)]">
+                hello@omnitarget.co
               </a>
               .
             </p>
@@ -137,8 +137,8 @@ function PrivacyPage() {
             <h2 className="text-2xl font-semibold text-[var(--lx-ink)]">10. Contact Us</h2>
             <p>
               For privacy or data access questions, contact us at{" "}
-              <a href="mailto:support@omnitarget.co" className="underline hover:text-[var(--lx-accent)]">
-                support@omnitarget.co
+              <a href="mailto:hello@omnitarget.co" className="underline hover:text-[var(--lx-accent)]">
+                hello@omnitarget.co
               </a>
               .
             </p>

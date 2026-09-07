@@ -31,9 +31,8 @@ const WEAVE: Record<string, { x: number; y: number }> = {
   paradox: { x: 0.5, y: 0.55 }, // between the two products, through "vs"
   listening: { x: 0.2, y: 0.66 }, // headline upper-left, open lower-left
   composition: { x: 0.74, y: 0.55 }, // under the right column's margin
-  range: { x: 0.25, y: 0.5 }, // the open middle between verdict and numbers
-  observatory: { x: 0.74, y: 0.5 }, // content centered — open right
-  invitation: { x: 0.5, y: 0.78 }, // ends at the CTA button
+  observatory: { x: 0.80, y: 0.50 }, // content centered — open right
+  invitation: { x: 0.5, y: 0.60 }, // ends at the CTA button
 };
 
 const MOBILE_WEAVE: Record<string, { x: number; y: number }> = {
@@ -41,9 +40,8 @@ const MOBILE_WEAVE: Record<string, { x: number; y: number }> = {
   paradox: { x: 0.16, y: 0.50 }, // snakes across to the left
   listening: { x: 0.84, y: 0.55 }, // snakes across to the right
   composition: { x: 0.16, y: 0.55 }, // snakes across to the left
-  range: { x: 0.84, y: 0.50 }, // snakes across to the right
-  observatory: { x: 0.06, y: 0.50 }, // shifted left into margin to clear DTC pills and title
-  invitation: { x: 0.50, y: 0.78 }, // snakes down directly into the center CTA button
+  observatory: { x: 0.84, y: 0.50 }, // weaves to the right, clear of text
+  invitation: { x: 0.50, y: 0.60 }, // snakes down directly into the center CTA button
 };
 
 /** at rest, only the very beginning of the stroke exists (px of path) */
@@ -147,7 +145,7 @@ export function StoryPath() {
         lastHeight = r.height;
       }
       const ctaBtn = document.querySelector<HTMLElement>(
-        "#chamber-invitation a.lx-cta-major, #chamber-invitation [data-lens-cta]",
+        "#chamber-invitation a.lx-cta-major, #chamber-invitation [data-lens-cta], a.lx-cta-major[data-lens-cta]",
       );
       if (ctaBtn) {
         const ctaRect = ctaBtn.getBoundingClientRect();
@@ -202,15 +200,61 @@ export function StoryPath() {
     let resizeT = 0;
     const onResize = () => {
       window.clearTimeout(resizeT);
-      resizeT = window.setTimeout(measure, 150);
+      resizeT = window.setTimeout(measure, 60);
     };
     window.addEventListener("resize", onResize);
+
+    // Dynamic layout observer: tracks element resizes (fonts, currency changes, plate expansion)
+    const ro =
+      typeof ResizeObserver !== "undefined"
+        ? new ResizeObserver(() => {
+            onResize();
+          })
+        : null;
+
+    const trackEl = document.querySelector<HTMLElement>(".lumen-track");
+    if (trackEl && ro) ro.observe(trackEl);
+    const invEl = document.getElementById("chamber-invitation");
+    if (invEl && ro) ro.observe(invEl);
+    if (document.body && ro) ro.observe(document.body);
+
+    // Font load handler: ensures layout is re-measured once typography settles
+    if (document.fonts?.ready) {
+      document.fonts.ready.then(() => {
+        measure();
+      });
+    }
+
+    // Intersection observer for Chamber 6 and CTA button entrance
+    let io: IntersectionObserver | null = null;
+    const targetCta = document.querySelector<HTMLElement>(
+      "#chamber-invitation a.lx-cta-major, #chamber-invitation [data-lens-cta]",
+    );
+    if (targetCta && typeof IntersectionObserver !== "undefined") {
+      io = new IntersectionObserver(
+        () => {
+          measure();
+          window.setTimeout(measure, 350);
+          window.setTimeout(measure, 700);
+        },
+        { threshold: [0, 0.5, 1.0] },
+      );
+      io.observe(targetCta);
+    }
+
+    // Safety timers: guarantees geometry sync across hydration, currency rate fetch, and animation settles
+    const timerIds = [50, 150, 350, 700, 1200, 2000, 3500].map((delay) =>
+      window.setTimeout(measure, delay),
+    );
 
     return () => {
       cancelAnimationFrame(raf);
       window.clearTimeout(resizeT);
+      timerIds.forEach(window.clearTimeout);
       window.removeEventListener("resize", onResize);
       ScrollTrigger.removeEventListener("refresh", measure);
+      if (ro) ro.disconnect();
+      if (io) io.disconnect();
     };
   }, []);
 

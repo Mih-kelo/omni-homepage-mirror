@@ -11,8 +11,8 @@ import { COPY } from "../config/copy";
  */
 export function Range() {
   const gateway = COPY.paradox.gateway;
-  const roas = gateway.rows.find(([k]) => k === COPY.range.roas.label)?.[1] ?? "2.4x";
-  const ftb = gateway.rows.find(([k]) => k === COPY.range.firstTime.label)?.[1] ?? "64%";
+  const roas = gateway.rows.find(([k]) => (k as string) === COPY.range.roas.label)?.[1] ?? "2.4x";
+  const ftb = gateway.rows.find(([k]) => (k as string) === COPY.range.firstTime.label)?.[1] ?? "72%";
   return (
     <ChamberSection id="range" justify="stretch">
       <div className="lx-bleed lx-split">

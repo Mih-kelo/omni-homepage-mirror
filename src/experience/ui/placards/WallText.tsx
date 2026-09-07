@@ -13,6 +13,7 @@ interface WallTextProps {
   lines: WallLine[];
   small?: boolean;
   as?: "h1" | "h2" | "h3" | "p";
+  className?: string;
 }
 
 /**
@@ -29,7 +30,7 @@ export function WallText(props: WallTextProps) {
 }
 
 /** the thread writes: per-character, scrubbed by the story path */
-function WrittenWall({ lines, small = false, as: Tag = "h2" }: WallTextProps) {
+function WrittenWall({ lines, small = false, as: Tag = "h2", className }: WallTextProps) {
   const T = Tag as "h2";
   const rootRef = useRef<HTMLHeadingElement>(null);
 
@@ -50,12 +51,14 @@ function WrittenWall({ lines, small = false, as: Tag = "h2" }: WallTextProps) {
     });
   }, []);
 
+  const baseClass = small ? "lx-wall lx-wall-sm" : "lx-wall";
   return (
     <T
       ref={rootRef}
-      className={small ? "lx-wall lx-wall-sm" : "lx-wall"}
+      className={className ? `${baseClass} ${className}` : baseClass}
       aria-label={lines.map((l) => l.text).join(" ")}
     >
+
       {lines.map((line, li) => (
         <span
           key={li}
@@ -82,10 +85,12 @@ function WrittenWall({ lines, small = false, as: Tag = "h2" }: WallTextProps) {
 }
 
 /** staggered mask-lift — the boot/SSR and still-preference voice */
-function MaskWall({ lines, small = false, as: Tag = "h2" }: WallTextProps) {
+function MaskWall({ lines, small = false, as: Tag = "h2", className }: WallTextProps) {
+  const baseClass = small ? "lx-wall lx-wall-sm" : "lx-wall";
   return (
-    <Tag className={small ? "lx-wall lx-wall-sm" : "lx-wall"}>
+    <Tag className={className ? `${baseClass} ${className}` : baseClass}>
       {lines.map((line, i) => (
+
         <span className="lx-maskline" key={i}>
           <motion.span
             initial={MASKLINE.hidden}
