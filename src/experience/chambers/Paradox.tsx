@@ -63,11 +63,12 @@ export function Paradox() {
   return (
     <ChamberSection id="paradox" justify="stretch">
       <div className="lx-bleed" style={{ display: "grid", gap: "clamp(28px, 4vw, 52px)" }}>
-        <div>
+        <div style={{ textAlign: "center", display: "grid", justifyItems: "center" }}>
           <Reveal>
             <span className="lx-mono lx-mono-accent">{COPY.paradox.eyebrow}</span>
           </Reveal>
           <WallText
+            className="lx-paradox-wall"
             lines={[{ text: COPY.paradox.titleA }, { text: COPY.paradox.titleB, accent: true }]}
           />
         </div>

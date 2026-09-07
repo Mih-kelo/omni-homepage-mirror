@@ -25,6 +25,7 @@ export function Invitation() {
           <span className="lx-mono lx-mono-accent">{COPY.pricing.eyebrow}</span>
         </Reveal>
         <WallText
+          className="lx-invitation-wall"
           lines={[{ text: COPY.pricing.titleA }, { text: COPY.pricing.titleB, accent: true }]}
         />
         <Reveal delay={0.12}>

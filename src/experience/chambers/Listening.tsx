@@ -17,6 +17,7 @@ export function Listening() {
             <span className="lx-mono">{COPY.howItWorks.eyebrow}</span>
           </Reveal>
           <WallText
+            className="lx-listening-wall"
             lines={[
               { text: COPY.howItWorks.titleA },
               { text: COPY.howItWorks.titleB, accent: true },

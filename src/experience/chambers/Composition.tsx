@@ -1,25 +1,31 @@
+import { useState } from "react";
 import { ChamberSection } from "../ui/placards/ChamberSection";
 import { WallText } from "../ui/placards/WallText";
 import { Reveal } from "../ui/placards/Reveal";
 import { BrandMark } from "../ui/chrome/BrandMark";
 import { APP_URL, COPY } from "../config/copy";
+import adCreativeTee from "@/assets/ad-creative-tee.png";
 
 /**
- * Chamber 4 — the Composition Hall. Understanding. The brief assembles
- * piece by visible piece; step 03 + the brief artifact.
- * Full-width editorial split: the message on the left,
- * the authentic brief artifact on the right.
+ * Chamber 4 — The Ad Plan.
+ * Shows the authentic deliverables founders and growth teams receive:
+ * - High-converting Meta feed ad mockup (copy, creative, headline, CTA)
+ * - 3 high-converting video hook scripts ready to run
+ * - Exact starting budget and campaign settings
  */
 export function Composition() {
+  const [activeTab, setActiveTab] = useState<"ad" | "hooks">("ad");
+
   return (
     <ChamberSection id="composition" justify="stretch">
       <div className="lx-bleed lx-split lx-split-top">
-        <div style={{ display: "grid", gap: 24, alignContent: "center", height: "100%", maxWidth: 480 }}>
+        <div style={{ display: "grid", gap: 24, alignContent: "center", height: "100%", maxWidth: 520 }}>
           <div>
             <Reveal>
               <span className="lx-mono">{COPY.whatYouGet.eyebrow}</span>
             </Reveal>
             <WallText
+              className="lx-composition-wall"
               lines={[
                 { text: COPY.whatYouGet.titleA },
                 { text: COPY.whatYouGet.titleB, accent: true },
@@ -28,57 +34,57 @@ export function Composition() {
           </div>
 
           <Reveal delay={0.15}>
-            <div style={{ display: "flex", flexWrap: "wrap", gap: 8 }}>
+            <div style={{ display: "flex", flexWrap: "wrap", gap: 10 }}>
               <span
                 style={{
-                  font: "500 12.5px/1.4 var(--lx-grotesk)",
-                  padding: "7px 14px",
+                  font: "500 13px/1.4 var(--lx-grotesk)",
+                  padding: "8px 16px",
                   borderRadius: 999,
                   border: "1px solid var(--lx-hairline)",
                   background: "color-mix(in srgb, var(--lx-card-hi) 60%, var(--lx-bg))",
                   color: "var(--lx-ink)",
                   display: "inline-flex",
                   alignItems: "center",
-                  gap: 6,
+                  gap: 7,
                 }}
               >
-                <span>📦</span> The 1 Product to Sell
+                <span>📦</span> The 1 Product Strangers Actually Buy
               </span>
               <span
                 style={{
-                  font: "500 12.5px/1.4 var(--lx-grotesk)",
-                  padding: "7px 14px",
+                  font: "500 13px/1.4 var(--lx-grotesk)",
+                  padding: "8px 16px",
                   borderRadius: 999,
                   border: "1px solid var(--lx-hairline)",
                   background: "color-mix(in srgb, var(--lx-card-hi) 60%, var(--lx-bg))",
                   color: "var(--lx-ink)",
                   display: "inline-flex",
                   alignItems: "center",
-                  gap: 6,
+                  gap: 7,
                 }}
               >
-                <span>🎬</span> 3 Video Scripts to Film
+                <span>✍️</span> Ready-to-Run Ad Copy & Headline
               </span>
               <span
                 style={{
-                  font: "500 12.5px/1.4 var(--lx-grotesk)",
-                  padding: "7px 14px",
+                  font: "500 13px/1.4 var(--lx-grotesk)",
+                  padding: "8px 16px",
                   borderRadius: 999,
                   border: "1px solid var(--lx-hairline)",
                   background: "color-mix(in srgb, var(--lx-card-hi) 60%, var(--lx-bg))",
                   color: "var(--lx-ink)",
                   display: "inline-flex",
                   alignItems: "center",
-                  gap: 6,
+                  gap: 7,
                 }}
               >
-                <span>💰</span> Exact Daily Budget
+                <span>🎬</span> 3 Scroll-Stopping Video Hooks
               </span>
             </div>
           </Reveal>
 
           <Reveal delay={0.25}>
-            <div>
+            <div className="space-y-2">
               <a
                 href={APP_URL}
                 className="lx-cta-major"
@@ -93,133 +99,174 @@ export function Composition() {
                 Get Your Free Ad Plan
                 <span aria-hidden="true">→</span>
               </a>
+              <div className="text-[11.5px] text-slate-500 dark:text-slate-400 font-mono">
+                No credit card required · Ready in 60 seconds
+              </div>
             </div>
           </Reveal>
         </div>
 
-        <div style={{ display: "grid", gap: 20, alignContent: "center", height: "100%", width: "100%" }}>
+        <div style={{ display: "grid", gap: 16, alignContent: "center", height: "100%", width: "100%" }}>
           <Reveal delay={0.2}>
-            {/* Authentic Omni Target Brief Document (matching actual PDF output) */}
-            <div className="rounded-2xl border border-slate-200/90 dark:border-white/10 bg-white dark:bg-[#12131d] text-slate-900 dark:text-slate-100 p-5 sm:p-7 shadow-2xl text-left font-sans w-full max-w-xl mx-auto space-y-4">
-              {/* Document Header */}
-              <div className="flex items-start justify-between pb-3 border-b border-slate-100 dark:border-white/10">
-                <div className="flex items-center gap-2.5">
-                  <BrandMark size={28} className="rounded-lg shadow-sm" />
-                  <span className="font-extrabold text-[17px] tracking-tight text-indigo-600 dark:text-indigo-400">
-                    Omni Target
+            {/* The Deliverable Container */}
+            <div className="rounded-2xl border border-slate-200/90 dark:border-white/10 bg-white dark:bg-[#12131d] text-slate-900 dark:text-slate-100 p-4 sm:p-6 shadow-2xl text-left font-sans w-full max-w-lg mx-auto space-y-4">
+              {/* Header with Switcher */}
+              <div className="flex items-center justify-between pb-3 border-b border-slate-100 dark:border-white/10">
+                <div className="flex items-center gap-2">
+                  <BrandMark size={24} className="rounded-md" />
+                  <span className="font-extrabold text-[14px] sm:text-[15px] text-slate-900 dark:text-white tracking-tight">
+                    Your Meta Ad Brief
                   </span>
                 </div>
-                <div className="text-right">
-                  <span className="inline-block px-2.5 py-0.5 rounded-full border border-indigo-200 dark:border-indigo-800/60 bg-indigo-50 dark:bg-indigo-950/40 text-indigo-600 dark:text-indigo-300 font-mono text-[9.5px] font-bold uppercase tracking-wider">
-                    Ready-to-Run Brief
-                  </span>
-                  <div className="text-[10px] font-mono text-slate-400 mt-0.5">3 September 2026</div>
-                </div>
-              </div>
 
-              {/* Title & Product Classification */}
-              <div>
-                <span className="font-mono text-[10px] uppercase tracking-[0.18em] text-slate-400 font-semibold block mb-0.5">
-                  Pre-Spend Intelligence · Meta Campaign Plan
-                </span>
-                <h4 className="text-[22px] sm:text-[25px] font-extrabold text-indigo-600 dark:text-indigo-400 tracking-tight leading-tight">
-                  The Everyday Starter Set
-                </h4>
-                <p className="text-[12px] text-slate-500 dark:text-slate-400 font-medium mt-0.5">
-                  Audited from Past Shopify Orders
-                </p>
-                <div className="flex flex-wrap items-center gap-2 mt-2.5">
-                  <span className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md bg-indigo-600 text-white text-[11px] font-semibold">
-                    <span className="h-1.5 w-1.5 rounded-full bg-white animate-pulse" />
-                    Drive Website Sales
-                  </span>
-                  <span className="inline-flex items-center px-2.5 py-1 rounded-md bg-indigo-50 dark:bg-indigo-950/60 border border-indigo-100 dark:border-indigo-900/40 text-indigo-700 dark:text-indigo-300 text-[11px] font-semibold">
-                    Target New Customers Only
-                  </span>
+                {/* Clean 2-tab view switch */}
+                <div className="inline-flex p-1 rounded-lg bg-slate-100 dark:bg-white/[0.06] text-[11px] font-medium">
+                  <button
+                    type="button"
+                    onClick={() => setActiveTab("ad")}
+                    className={`px-2.5 py-1 rounded-md transition-all cursor-pointer ${
+                      activeTab === "ad"
+                        ? "bg-white dark:bg-white/20 text-slate-900 dark:text-white shadow-xs font-semibold"
+                        : "text-slate-500 dark:text-slate-400 hover:text-slate-800 dark:hover:text-white"
+                    }`}
+                  >
+                    📱 Feed Ad
+                  </button>
+                  <button
+                    type="button"
+                    onClick={() => setActiveTab("hooks")}
+                    className={`px-2.5 py-1 rounded-md transition-all cursor-pointer ${
+                      activeTab === "hooks"
+                        ? "bg-white dark:bg-white/20 text-slate-900 dark:text-white shadow-xs font-semibold"
+                        : "text-slate-500 dark:text-slate-400 hover:text-slate-800 dark:hover:text-white"
+                    }`}
+                  >
+                    🎬 3 Video Hooks
+                  </button>
                 </div>
               </div>
 
-              {/* Launch Control Panel Frame */}
-              <div className="rounded-xl border border-indigo-100 dark:border-white/10 bg-[#f8faff] dark:bg-white/[0.02] p-3.5 sm:p-4 space-y-3">
-                <div className="flex items-center justify-between pb-1 border-b border-indigo-100/60 dark:border-white/5">
-                  <span className="font-mono text-[10.5px] font-bold text-indigo-700 dark:text-indigo-300 uppercase tracking-wider flex items-center gap-1.5">
-                    <span>🧭</span> Meta Ads Copy-Paste Guide
-                  </span>
-                  <span className="px-2 py-0.5 rounded-full bg-indigo-100 dark:bg-indigo-900/50 text-indigo-700 dark:text-indigo-300 text-[9px] font-mono font-bold uppercase tracking-wider">
-                    3-Min Launch
-                  </span>
-                </div>
-
-                {/* 4 Cards Grid */}
-                <div className="grid grid-cols-2 sm:grid-cols-4 gap-2">
-                  <div className="p-2.5 rounded-lg bg-white dark:bg-white/[0.04] border border-slate-200/80 dark:border-white/5 shadow-xs">
-                    <div className="text-[15px] font-extrabold text-slate-900 dark:text-white">$42<span className="text-[11px] font-normal text-slate-400">/day</span></div>
-                    <div className="text-[8px] font-mono text-slate-400 uppercase mt-0.5">Starting Budget</div>
-                    <div className="text-[9.5px] text-slate-600 dark:text-slate-300 mt-0.5">Start safe · Scale with sales</div>
-                  </div>
-                  <div className="p-2.5 rounded-lg bg-white dark:bg-white/[0.04] border border-slate-200/80 dark:border-white/5 shadow-xs">
-                    <div className="text-[15px] font-extrabold text-indigo-600 dark:text-indigo-400">Purchases</div>
-                    <div className="text-[8px] font-mono text-slate-400 uppercase mt-0.5">Campaign Goal</div>
-                    <div className="text-[9.5px] text-slate-600 dark:text-slate-300 mt-0.5">Optimized for real orders</div>
-                  </div>
-                  <div className="p-2.5 rounded-lg bg-white dark:bg-white/[0.04] border border-slate-200/80 dark:border-white/5 shadow-xs">
-                    <div className="text-[14px] font-extrabold text-slate-900 dark:text-white truncate">Starter Set</div>
-                    <div className="text-[8px] font-mono text-slate-400 uppercase mt-0.5">Product to Sell</div>
-                    <div className="text-[9.5px] text-slate-600 dark:text-slate-300 mt-0.5">72% First-Time Buyers</div>
-                  </div>
-
-                  <div className="p-2.5 rounded-lg bg-white dark:bg-white/[0.04] border border-slate-200/80 dark:border-white/5 shadow-xs">
-                    <div className="text-[14px] font-extrabold text-indigo-600 dark:text-indigo-400">New Buyers</div>
-                    <div className="text-[8px] font-mono text-slate-400 uppercase mt-0.5">Who Sees Your Ad</div>
-                    <div className="text-[9.5px] text-slate-600 dark:text-slate-300 mt-0.5">Excludes past customers</div>
-                  </div>
-                </div>
-
-                {/* Settings Table */}
-                <div className="rounded-lg border border-slate-200/80 dark:border-white/10 bg-white dark:bg-[#161722] overflow-hidden text-[11px]">
-                  <div className="bg-slate-50 dark:bg-white/[0.03] px-3 py-1.5 border-b border-slate-100 dark:border-white/5 font-mono text-[9px] uppercase tracking-wider text-slate-400 font-bold">
-                    Settings to Copy into Meta Ads Manager
-                  </div>
-                  <div className="divide-y divide-slate-100 dark:divide-white/5 p-1">
-                    <div className="grid grid-cols-1 sm:grid-cols-2 p-2 gap-1 sm:gap-4">
-                      <div>
-                        <span className="text-[9px] font-mono text-slate-400 uppercase block">Campaign Objective</span>
-                        <span className="font-semibold text-slate-800 dark:text-slate-200">Sales (Website Purchases)</span>
+              {/* TAB 1: FEED AD MOCKUP */}
+              {activeTab === "ad" && (
+                <div className="rounded-xl border border-slate-200/80 dark:border-white/10 bg-[#fbfcfd] dark:bg-white/[0.02] p-3.5 sm:p-4 space-y-3">
+                  {/* Meta Ad Post Header */}
+                  <div className="flex items-center justify-between">
+                    <div className="flex items-center gap-2.5">
+                      <div className="w-9 h-9 rounded-full bg-slate-900 dark:bg-indigo-600 text-white font-bold text-[12px] flex items-center justify-center shadow-xs">
+                        OM
                       </div>
                       <div>
-                        <span className="text-[9px] font-mono text-slate-400 uppercase block">Conversion Goal</span>
-                        <span className="font-semibold text-slate-800 dark:text-slate-200">Purchases · Online Store</span>
+                        <div className="font-bold text-[13px] text-slate-900 dark:text-white leading-snug">
+                          {COPY.whatYouGet.adPreview.brand}
+                        </div>
+                        <div className="text-[10.5px] text-slate-500 dark:text-slate-400 flex items-center gap-1 font-sans">
+                          Sponsored · <span>🌐</span>
+                        </div>
                       </div>
                     </div>
-                    <div className="grid grid-cols-1 sm:grid-cols-2 p-2 gap-1 sm:gap-4">
-                      <div>
-                        <span className="text-[9px] font-mono text-slate-400 uppercase block">Target Audience</span>
-                        <span className="font-semibold text-slate-800 dark:text-slate-200">Women · Ages 22–40</span>
-                      </div>
-                      <div>
-                        <span className="text-[9px] font-mono text-slate-400 uppercase block">Target Locations</span>
-                        <span className="font-semibold text-slate-800 dark:text-slate-200">Top Buying Cities (from store orders)</span>
-                      </div>
-                    </div>
-                    <div className="grid grid-cols-1 sm:grid-cols-2 p-2 gap-1 sm:gap-4">
-                      <div>
-                        <span className="text-[9px] font-mono text-slate-400 uppercase block">Test Duration</span>
-                        <span className="font-semibold text-slate-800 dark:text-slate-200">7 Days (First Test Run)</span>
-                      </div>
-                      <div>
-                        <span className="text-[9px] font-mono text-slate-400 uppercase block">Best Launch Time</span>
-                        <span className="font-semibold text-slate-800 dark:text-slate-200">Sunday 8:00 PM (Before peak orders)</span>
-                      </div>
+                    <span className="text-slate-400 font-bold text-sm tracking-widest select-none">···</span>
+                  </div>
+
+                  {/* Primary Ad Copy Hook */}
+                  <p className="text-[12.5px] sm:text-[13px] leading-relaxed text-slate-800 dark:text-slate-200">
+                    {COPY.whatYouGet.adPreview.primaryText}
+                  </p>
+
+                  {/* Creative Product Image */}
+                  <div className="rounded-lg overflow-hidden border border-slate-200/60 dark:border-white/10 bg-slate-100 dark:bg-black/30 relative">
+                    <img
+                      src={adCreativeTee}
+                      alt="Winning Product - Everyday Cotton Tee"
+                      className="w-full max-h-[260px] object-cover sm:object-contain mx-auto"
+                      loading="eager"
+                    />
+                    <div className="absolute bottom-2 left-2 px-2 py-0.5 rounded bg-black/75 text-white font-mono text-[9px] uppercase tracking-wider backdrop-blur-xs flex items-center gap-1">
+                      <span>📦</span> #1 Winning Product
                     </div>
                   </div>
-                </div>
-              </div>
 
-              {/* Action Bar */}
-              <div className="pt-2 flex items-center justify-end text-[11px] font-mono text-slate-400">
-                <span className="text-emerald-600 dark:text-emerald-400 font-semibold flex items-center gap-1">
-                  <span>⚡</span> Generated in 60 seconds
-                </span>
+                  {/* Link Destination Bar */}
+                  <div className="flex items-center justify-between gap-2.5 p-2.5 rounded-lg bg-white dark:bg-white/[0.04] border border-slate-200/80 dark:border-white/10 shadow-xs">
+                    <div className="min-w-0 pr-1">
+                      <div className="text-[9px] font-mono text-slate-400 uppercase tracking-wider truncate">
+                        {COPY.whatYouGet.adPreview.handle}
+                      </div>
+                      <div className="text-[12.5px] font-bold text-slate-900 dark:text-white truncate">
+                        {COPY.whatYouGet.adPreview.headline}
+                      </div>
+                      <div className="text-[10.5px] text-slate-500 dark:text-slate-400 truncate">
+                        {COPY.whatYouGet.adPreview.linkDescription}
+                      </div>
+                    </div>
+                    <button
+                      type="button"
+                      className="shrink-0 px-3 py-1.5 rounded-md bg-slate-900 dark:bg-white text-white dark:text-slate-900 text-[11px] font-bold shadow-xs select-none"
+                    >
+                      {COPY.whatYouGet.adPreview.cta}
+                    </button>
+                  </div>
+
+                  {/* Engagement Bar */}
+                  <div className="pt-2 border-t border-slate-200/60 dark:border-white/5 flex items-center justify-between text-[11px] text-slate-500 dark:text-slate-400">
+                    <span className="flex items-center gap-1.5 font-medium">
+                      <span>👍❤️</span> 2.4k Likes
+                    </span>
+                    <span>184 Comments · 92 Shares</span>
+                  </div>
+                </div>
+              )}
+
+              {/* TAB 2: 3 VIDEO HOOKS */}
+              {activeTab === "hooks" && (
+                <div className="space-y-2.5">
+                  <div className="text-[11px] font-mono uppercase tracking-wider text-slate-400 font-semibold px-1">
+                    3 High-Converting Video Angles
+                  </div>
+                  {COPY.whatYouGet.hooks.map((h) => (
+                    <div
+                      key={h.num}
+                      className="p-3 rounded-xl border border-slate-200/80 dark:border-white/10 bg-[#fbfcfd] dark:bg-white/[0.02] space-y-2"
+                    >
+                      <div className="flex items-center justify-between">
+                        <span className="inline-flex items-center gap-1.5 px-2 py-0.5 rounded-md bg-indigo-50 dark:bg-indigo-950/60 text-indigo-700 dark:text-indigo-300 font-mono text-[9.5px] font-bold uppercase">
+                          Angle {h.num} · {h.label}
+                        </span>
+                        <span className="text-[9.5px] font-mono text-emerald-600 dark:text-emerald-400 font-semibold">
+                          Ready to film
+                        </span>
+                      </div>
+
+                      <div className="text-[12px] rounded-md bg-amber-50 dark:bg-amber-950/30 border border-amber-200/60 dark:border-amber-900/40 p-2 text-amber-900 dark:text-amber-200 font-semibold">
+                        "{h.hook}"
+                      </div>
+
+                      <div className="text-[11px] text-slate-600 dark:text-slate-300 space-y-1">
+                        <div>
+                          <strong className="text-slate-800 dark:text-slate-200">📹 What to film:</strong> {h.cue}
+                        </div>
+                        <div>
+                          <strong className="text-slate-800 dark:text-slate-200">🗣️ What to say:</strong> "{h.script}"
+                        </div>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              )}
+
+              {/* Founder-Friendly Launch Strip */}
+              <div className="rounded-lg bg-slate-50 dark:bg-white/[0.03] border border-slate-200/70 dark:border-white/5 p-2.5 text-[11px] grid grid-cols-3 gap-2 text-center">
+                <div>
+                  <span className="text-[8.5px] font-mono uppercase text-slate-400 block">Daily Budget</span>
+                  <span className="font-bold text-slate-800 dark:text-slate-200">Calculated for You</span>
+                </div>
+                <div>
+                  <span className="text-[8.5px] font-mono uppercase text-slate-400 block">Audience</span>
+                  <span className="font-bold text-slate-800 dark:text-slate-200">New Customers</span>
+                </div>
+                <div>
+                  <span className="text-[8.5px] font-mono uppercase text-slate-400 block">Speed</span>
+                  <span className="font-bold text-emerald-600 dark:text-emerald-400">Ready in 60s</span>
+                </div>
               </div>
 
             </div>

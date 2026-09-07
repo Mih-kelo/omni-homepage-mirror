@@ -104,13 +104,55 @@ export const COPY = {
     eyebrow: "The Ad Plan",
     titleA: "Everything you need to launch.",
     titleB: "Nothing to guess.",
-    body: "No guessing what will sell, no staring at a blank screen wondering what to film, and no hiring an expensive agency. You get the 1 product that converts strangers, 3 video scripts to film on your phone, and your exact daily budget.",
+    body: "No staring at a blank screen wondering what to write, no stressing over what to film, and no hours of spreadsheet digging. You get the 1 product new buyers actually want, high-converting ad copy, 3 video hook scripts ready to shoot, and your exact daily budget.",
     items: [
       "The 1 product strangers actually buy",
-      "3 video scripts you can shoot on your phone",
-      "Exact buttons to click in Meta Ads",
-      "Exact daily budget so you don't burn cash",
+      "Ready-to-run ad copy & headline",
+      "3 scroll-stopping video hooks",
     ],
+    adPreview: {
+      brand: "Omni Dev",
+      handle: "omni-dev.myshopify.com",
+      productName: "Everyday Cotton Tee",
+      primaryText:
+        "Some tees just sit on you. This one moves with you, hugging every curve without clinging or creasing. Get your hands on the stretchy, second-skin cotton before it's everywhere.",
+      headline: "The Cotton Everyone Will Be Talking About",
+      linkDescription:
+        "Fine stitching detail runs along the sleeves and hem for a finished, tailored edge.",
+      cta: "Shop Now",
+    },
+    hooks: [
+      {
+        num: "1",
+        label: "The Problem",
+        hook: "Tees that ride up? Not this one.",
+        cue: "Split screen: baggy shapeless tee vs fitted cotton jersey tee that stays put.",
+        script:
+          "Tired of t-shirts that bunch up the second you move? This one is cut to move with you, not against you.",
+      },
+      {
+        num: "2",
+        label: "Craft & Quality",
+        hook: "The cotton everyone's obsessed with.",
+        cue: "Macro close-up on stitching detail, slow-motion stretch showing fabric snap back.",
+        script:
+          "It's just cotton, until you feel this one — stretchy, lightweight, and soft enough to explain the 5-star reviews.",
+      },
+      {
+        num: "3",
+        label: "Fit & Style",
+        hook: "The tee that fits like it was made for you.",
+        cue: "Natural daylight walking shot showing off the body-hugging silhouette.",
+        script:
+          "This isn't just a basic tee — it's the one that makes you look twice in the mirror before you even leave the house.",
+      },
+    ],
+    settings: {
+      budget: "Calculated for You",
+      target: "New Customers Only",
+      goal: "Sales (Website Purchases)",
+      firstTimePct: "72%",
+    },
   },
 
   brief: {
