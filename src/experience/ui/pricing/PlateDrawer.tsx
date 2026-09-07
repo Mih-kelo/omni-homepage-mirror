@@ -103,8 +103,22 @@ export function PlateDrawer() {
   };
 
   const formatPeriodDisplay = (usdPrice: number) => {
-    if (usdPrice === 0) return "no card required";
-    return "one-time";
+    if (usdPrice === 0) return "";
+    return "one-time charge";
+  };
+
+  const renderFeatureText = (text: string) => {
+    const match = text.match(/\(\$([0-9.]+) each\)/);
+    if (!match) return text;
+    if (selectedCurrency === "USD") return text;
+
+    const unitUsd = parseFloat(match[1]);
+    const local = unitUsd * rate;
+    if (selectedCurrency === "NGN") {
+      const rounded = Math.round(local / 100) * 100;
+      return text.replace(/\(\$[0-9.]+ each\)/, `(₦${rounded.toLocaleString("en-US")} each)`);
+    }
+    return text.replace(/\(\$[0-9.]+ each\)/, `(${cur.symbol}${local.toFixed(2)} each)`);
   };
 
   return (
@@ -151,7 +165,7 @@ export function PlateDrawer() {
               <span className="lx-plate-name">{p.name}</span>
               <div className="lx-plate-pricerow">
                 <span className="lx-plate-price">{displayPrice}</span>
-                <span className="lx-plate-period">{displayPeriod}</span>
+                {displayPeriod ? <span className="lx-plate-period">{displayPeriod}</span> : null}
               </div>
               {p.desc ? <p className="lx-plate-desc">{p.desc}</p> : null}
               <span className="lx-plate-rule" aria-hidden="true" />
@@ -159,7 +173,7 @@ export function PlateDrawer() {
               {p.features.length > 0 && (
                 <ul className="lx-plate-features">
                   {p.features.map((f) => (
-                    <li key={f}>{f}</li>
+                    <li key={f}>{renderFeatureText(f)}</li>
                   ))}
                 </ul>
               )}
